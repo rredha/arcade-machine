@@ -11,8 +11,7 @@ namespace Arcade._Project.Snake
     
         public void Awake()
         {
-            _levelManager.SetState(new Playing(_levelManager));
-            
+            _levelManager.enabled = true;
         }
         /*
         public int score = 0;
