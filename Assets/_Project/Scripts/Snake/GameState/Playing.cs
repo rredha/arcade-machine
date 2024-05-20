@@ -19,6 +19,7 @@ namespace Arcade._Project.Snake.GameState
         */
         public override void EnterState()
         {
+            Time.fixedDeltaTime = 0.3f;
             Debug.Log("Hello from Playing State EnterState");
         }
 
@@ -29,6 +30,35 @@ namespace Arcade._Project.Snake.GameState
 
         public override void UpdateState()
         {
+            Update();
+            FixedUpdate();
+        }
+
+        public override LevelManager.LevelState GetNextState()
+        {
+            return LevelManager.LevelState.Playing;
+        }
+
+        public override void OnTriggerEnter(Collider other)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void FixedUpdate()
+        {
+            for (int i = segments.Count-1; i > 0; i--)
+            {
+                segments[i].position = segments[i-1].position;
+            }
+
+            SnakeHead.transform.position = new Vector3(
+                Mathf.Round(SnakeHead.transform.position.x + dir.x),
+                Mathf.Round(SnakeHead.transform.position.y + dir.y),
+                0.0f);
+        }
+        public void Update()
+        {
+            
             if ( Input.GetKey(KeyCode.DownArrow) & (prevDir != Vector2.up) & (prevDir != Vector2.down))
             {
                 dir = Vector2.down;
@@ -50,28 +80,7 @@ namespace Arcade._Project.Snake.GameState
                 dir = Vector2.zero;
             }
             dir=prevDir;
-            
-            for (int i = segments.Count-1; i > 0; i--)
-            {
-                segments[i].position = segments[i-1].position;
-            }
-
-            SnakeHead.transform.position = new Vector3(
-                Mathf.Round(SnakeHead.transform.position.x + dir.x),
-                Mathf.Round(SnakeHead.transform.position.y + dir.y),
-                0.0f);
         }
-
-        public override LevelManager.LevelState GetNextState()
-        {
-            return LevelManager.LevelState.Playing;
-        }
-
-        public override void OnTriggerEnter(Collider other)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public override void OnTriggerStay(Collider other)
         {
             throw new System.NotImplementedException();
