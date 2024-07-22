@@ -4,19 +4,17 @@ using UnityEngine;
 
 namespace Arcade._Project.Snake.GameState
 {
+    /*
     public class Playing:State<LevelManager.LevelState>
     {
+        
         public Playing(LevelManager.LevelState key, Transform snakeHead, Transform segmentPrefab) : base(key, snakeHead, segmentPrefab)
         {
         }
         private Vector2 dir;
         private Vector2 prevDir = Vector2.right;
         public List<Transform> segments = new List<Transform>(); //list that stores all the segments.
-        /*
-        public Playing(LevelManager.LevelState key) : base(key)
-        {
-        }
-        */
+        
         public override void EnterState()
         {
             Time.fixedDeltaTime = 0.3f;
@@ -92,4 +90,5 @@ namespace Arcade._Project.Snake.GameState
         }
 
     }
+    */
 }

@@ -1,7 +1,11 @@
 {
   "dependencies": {
     "com.unity.2d.animation": {
+<<<<<<< HEAD
       "version": "9.1.0",
+=======
+      "version": "9.1.1",
+>>>>>>> 558c77a (Updated version from second source)
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -14,7 +18,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.aseprite": {
+<<<<<<< HEAD
       "version": "1.1.2",
+=======
+      "version": "1.1.4",
+>>>>>>> 558c77a (Updated version from second source)
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -46,11 +54,19 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.psdimporter": {
+<<<<<<< HEAD
       "version": "8.0.4",
       "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.2d.animation": "9.1.0",
+=======
+      "version": "8.0.5",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.2d.animation": "9.1.1",
+>>>>>>> 558c77a (Updated version from second source)
         "com.unity.2d.common": "8.0.2",
         "com.unity.2d.sprite": "1.0.0"
       },
@@ -63,12 +79,20 @@
       "dependencies": {}
     },
     "com.unity.2d.spriteshape": {
+<<<<<<< HEAD
       "version": "9.0.2",
+=======
+      "version": "9.0.3",
+>>>>>>> 558c77a (Updated version from second source)
       "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.1.0",
+<<<<<<< HEAD
         "com.unity.2d.common": "8.0.1",
+=======
+        "com.unity.2d.common": "8.0.2",
+>>>>>>> 558c77a (Updated version from second source)
         "com.unity.modules.physics2d": "1.0.0"
       },
       "url": "https://packages.unity.com"
@@ -104,7 +128,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
+<<<<<<< HEAD
       "version": "1.8.13",
+=======
+      "version": "1.8.16",
+>>>>>>> 558c77a (Updated version from second source)
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -114,7 +142,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
+<<<<<<< HEAD
       "version": "2.3.1",
+=======
+      "version": "2.4.3",
+>>>>>>> 558c77a (Updated version from second source)
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -138,6 +170,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.feature.2d": {
+<<<<<<< HEAD
       "version": "2.0.0",
       "depth": 0,
       "source": "builtin",
@@ -150,6 +183,20 @@
         "com.unity.2d.tilemap": "1.0.0",
         "com.unity.2d.tilemap.extras": "3.1.2",
         "com.unity.2d.aseprite": "1.1.2"
+=======
+      "version": "2.0.1",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.2d.animation": "9.1.1",
+        "com.unity.2d.pixel-perfect": "5.0.3",
+        "com.unity.2d.psdimporter": "8.0.5",
+        "com.unity.2d.sprite": "1.0.0",
+        "com.unity.2d.spriteshape": "9.0.3",
+        "com.unity.2d.tilemap": "1.0.0",
+        "com.unity.2d.tilemap.extras": "3.1.2",
+        "com.unity.2d.aseprite": "1.1.4"
+>>>>>>> 558c77a (Updated version from second source)
       }
     },
     "com.unity.ide.rider": {
@@ -185,7 +232,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.core": {
+<<<<<<< HEAD
       "version": "14.0.10",
+=======
+      "version": "14.0.11",
+>>>>>>> 558c77a (Updated version from second source)
       "depth": 1,
       "source": "builtin",
       "dependencies": {
@@ -196,23 +247,40 @@
       }
     },
     "com.unity.render-pipelines.universal": {
+<<<<<<< HEAD
       "version": "14.0.10",
+=======
+      "version": "14.0.11",
+>>>>>>> 558c77a (Updated version from second source)
       "depth": 0,
       "source": "builtin",
       "dependencies": {
         "com.unity.mathematics": "1.2.1",
         "com.unity.burst": "1.8.9",
+<<<<<<< HEAD
         "com.unity.render-pipelines.core": "14.0.10",
         "com.unity.shadergraph": "14.0.10",
+=======
+        "com.unity.render-pipelines.core": "14.0.11",
+        "com.unity.shadergraph": "14.0.11",
+>>>>>>> 558c77a (Updated version from second source)
         "com.unity.render-pipelines.universal-config": "14.0.9"
       }
     },
     "com.unity.render-pipelines.universal-config": {
+<<<<<<< HEAD
       "version": "14.0.9",
       "depth": 1,
       "source": "builtin",
       "dependencies": {
         "com.unity.render-pipelines.core": "14.0.9"
+=======
+      "version": "14.0.10",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "14.0.10"
+>>>>>>> 558c77a (Updated version from second source)
       }
     },
     "com.unity.searcher": {
@@ -223,11 +291,19 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.shadergraph": {
+<<<<<<< HEAD
       "version": "14.0.10",
       "depth": 1,
       "source": "builtin",
       "dependencies": {
         "com.unity.render-pipelines.core": "14.0.10",
+=======
+      "version": "14.0.11",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "14.0.11",
+>>>>>>> 558c77a (Updated version from second source)
         "com.unity.searcher": "4.9.2"
       }
     },
@@ -299,7 +375,11 @@
       }
     },
     "com.unity.visualscripting": {
+<<<<<<< HEAD
       "version": "1.9.2",
+=======
+      "version": "1.9.4",
+>>>>>>> 558c77a (Updated version from second source)
       "depth": 0,
       "source": "registry",
       "dependencies": {

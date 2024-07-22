@@ -1,3 +1,4 @@
+
 using Arcade._Project.Core.StateMachine;
 using UnityEngine;
 
@@ -5,11 +6,9 @@ namespace Arcade._Project.Snake.GameState
 {
     public class Lost:State<LevelManager.LevelState>
     {
-        /*
-        public Lost(LevelManager.LevelState key) : base(key)
+        public Lost(LevelManager.LevelState key, GameObject snakeHead, GameObject segmentPrefab) : base(key, snakeHead, segmentPrefab)
         {
         }
-        */
 
         public override void EnterState()
         {
@@ -46,8 +45,5 @@ namespace Arcade._Project.Snake.GameState
             throw new System.NotImplementedException();
         }
 
-        public Lost(LevelManager.LevelState key, Transform snakeHead, Transform segmentPrefab) : base(key, snakeHead, segmentPrefab)
-        {
-        }
     }
 }

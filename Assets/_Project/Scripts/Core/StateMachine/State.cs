@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Arcade._Project.Core.StateMachine
 {
-    public abstract class State<TEnumState> where TEnumState : Enum
+    public abstract class State<TEnumState> : MonoBehaviour where TEnumState : Enum
     {
         // source from 
-        public State(TEnumState key, Transform snakeHead, Transform segmentPrefab)
+        public State(TEnumState key, GameObject snakeHead, GameObject segmentPrefab)
         {
             StateKey = key;
             SnakeHead = snakeHead;
@@ -15,8 +15,8 @@ namespace Arcade._Project.Core.StateMachine
         }
 
         public TEnumState StateKey { get; private set; }
-        public Transform SnakeHead { get; private set; }
-        public Transform SegmentPrefab { get; private set; }
+        public GameObject SnakeHead { get; private set; }
+        public GameObject SegmentPrefab { get; private set; }
 
         public abstract void EnterState();
         public abstract void ExitState();

@@ -17,18 +17,18 @@ namespace Arcade._Project.Snake
         public enum LevelState
         {
             Init,
-            Playing,
+           // Playing,
             Lost
         }
 
         private void InitialiazeStates()
         {
             States.Add(LevelState.Init, new Init(LevelState.Init, snakeHead, segmentPrefab));
-            States.Add(LevelState.Playing, new Playing(LevelState.Playing, snakeHead, segmentPrefab));
+            //States.Add(LevelState.Playing, new Playing(LevelState.Playing, snakeHead, segmentPrefab));
             States.Add(LevelState.Lost, new Lost(LevelState.Lost, snakeHead, segmentPrefab));
             CurrentState = States[LevelState.Init];
         }
-        [SerializeField] private Transform segmentPrefab; // a prefab for the snake head !
-        [SerializeField] private Transform snakeHead;
+        [SerializeField] private GameObject segmentPrefab; // a prefab for the snake head !
+        [SerializeField] private GameObject snakeHead;
     }
 }

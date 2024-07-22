@@ -1,0 +1,12 @@
+/home/ahred/wrk/arcade-machine/Custom_Utils/bin/Debug/net6.0/Custom_Utils.deps.json
+/home/ahred/wrk/arcade-machine/Custom_Utils/bin/Debug/net6.0/Custom_Utils.dll
+/home/ahred/wrk/arcade-machine/Custom_Utils/bin/Debug/net6.0/Custom_Utils.pdb
+/home/ahred/wrk/arcade-machine/Custom_Utils/obj/Debug/net6.0/Custom_Utils.csproj.AssemblyReference.cache
+/home/ahred/wrk/arcade-machine/Custom_Utils/obj/Debug/net6.0/Custom_Utils.GeneratedMSBuildEditorConfig.editorconfig
+/home/ahred/wrk/arcade-machine/Custom_Utils/obj/Debug/net6.0/Custom_Utils.AssemblyInfoInputs.cache
+/home/ahred/wrk/arcade-machine/Custom_Utils/obj/Debug/net6.0/Custom_Utils.AssemblyInfo.cs
+/home/ahred/wrk/arcade-machine/Custom_Utils/obj/Debug/net6.0/Custom_Utils.csproj.CoreCompileInputs.cache
+/home/ahred/wrk/arcade-machine/Custom_Utils/obj/Debug/net6.0/Custom_Utils.dll
+/home/ahred/wrk/arcade-machine/Custom_Utils/obj/Debug/net6.0/refint/Custom_Utils.dll
+/home/ahred/wrk/arcade-machine/Custom_Utils/obj/Debug/net6.0/Custom_Utils.pdb
+/home/ahred/wrk/arcade-machine/Custom_Utils/obj/Debug/net6.0/ref/Custom_Utils.dll
