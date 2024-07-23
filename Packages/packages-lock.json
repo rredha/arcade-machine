@@ -1,5 +1,6 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "com.unity.2d.animation": {
 <<<<<<< HEAD
       "version": "9.1.0",
@@ -162,6 +163,8 @@
       },
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> 5fc224b (fixed package manager issue)
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 1,
@@ -169,6 +172,7 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
     "com.unity.feature.2d": {
 <<<<<<< HEAD
       "version": "2.0.0",
@@ -199,8 +203,10 @@
 >>>>>>> 558c77a (Updated version from second source)
       }
     },
+=======
+>>>>>>> 5fc224b (fixed package manager issue)
     "com.unity.ide.rider": {
-      "version": "3.0.28",
+      "version": "3.0.31",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -208,6 +214,7 @@
       },
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
     "com.unity.ide.visualstudio": {
       "version": "2.0.22",
       "depth": 0,
@@ -388,6 +395,8 @@
       },
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> 5fc224b (fixed package manager issue)
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
