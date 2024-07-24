@@ -1,5 +1,5 @@
 using UnityEngine;
-//using UnityEngine.UI;
+using UnityEngine.UI;
 
 //using UnityEditor.UIElements;
 
@@ -12,10 +12,8 @@ namespace Arcade._Project.Pong
         public int playerScore;
         public int computerScore;
 
-        //protected Text playerScoreText;
-        //protected Text computerScoreText;
-        protected string playerScoreText;
-        protected string computerScoreText;
+        protected Text playerScoreText;
+        protected Text computerScoreText;
 
         public pBall ball;
 
