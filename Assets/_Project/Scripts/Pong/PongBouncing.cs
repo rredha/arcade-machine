@@ -10,7 +10,7 @@ namespace Arcade._Project.Pong
         private void OnCollisionEnter2D(Collision2D col)
         {
             //’gives us the object that collided with our object
-            PongBall ball = col.gameObject.GetComponent<PongBall>();
+            Ball ball = col.gameObject.GetComponent<Ball>();
         
             if (ball != null)
             {
@@ -18,7 +18,7 @@ namespace Arcade._Project.Pong
                 ball.AddForceBall(-normal*this.bouncingStrength);
 
                 // Playing Hit 
-                FindObjectOfType<AudioManager>().Play("Hit_3");
+                //FindObjectOfType<AudioManager>().Play("Hit_3");
             }
         }
     }

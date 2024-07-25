@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Arcade._Project.Pong
 {
-    public class PongBall : MonoBehaviour
+    public class Ball : MonoBehaviour
     {
         /* @brief : implements the ball initial starting direction
                 the physics is taken into account by the unity physics engine

@@ -4,7 +4,9 @@
     <attachedFolders>
       <Path>Utils</Path>
     </attachedFolders>
-    <explicitIncludes />
+    <explicitIncludes>
+      <Path>Assets/_Project/Scripts/Core/SoundManager</Path>
+    </explicitIncludes>
     <explicitExcludes />
   </component>
 </project>

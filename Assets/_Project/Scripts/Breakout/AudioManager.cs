@@ -1,15 +1,17 @@
 using System;
+using Arcade._Project.Core.AudioPlayer;
 using UnityEngine;
 
 namespace Arcade._Project.Breakout
 {
-    public class AudioManager : MonoBehaviour
+    public class AudioManager : AudioPlayer
     {
-        public Sounds[] sounds;
+       [SerializeField] private AudioDataScriptableObject audioData;
         // Start is called before the first frame update
+        /*
         void Awake()
         {
-            foreach(Sounds s in sounds) {
+            foreach(Sounds s in audioData) {
                 s.source = gameObject.AddComponent<AudioSource>();
                 s.source.clip = s.clip;
                 s.source.volume = s.volume;
@@ -17,6 +19,10 @@ namespace Arcade._Project.Breakout
             }
         }
 
+    */
+    }
+}
+        /*
         void Start() {
             Play("Cave");
         }
@@ -33,5 +39,4 @@ namespace Arcade._Project.Breakout
             }
             s.source.Play();
         }
-    }
-}
+        */

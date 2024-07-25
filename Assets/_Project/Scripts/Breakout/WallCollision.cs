@@ -12,7 +12,7 @@ namespace Arcade._Project.Breakout
             if (ball != null)
             {
                 // Playing Hit 
-                FindObjectOfType<AudioManager>().Play("Hit_2");
+              //  FindObjectOfType<AudioManager>().Play("Hit_2");
             }
         }
     }

@@ -54,7 +54,7 @@ namespace Arcade._Project.Breakout
             {
                 Hit();
                 // Playing Hit
-                FindObjectOfType<AudioManager>().Play("Hit_1");
+                //FindObjectOfType<AudioManager>().Play("Hit_1");
 
             }
         }

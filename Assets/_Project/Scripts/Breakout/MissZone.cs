@@ -8,7 +8,7 @@ namespace Arcade._Project.Breakout
             if (other.gameObject.name == "Ball")
             {
                 FindObjectOfType<GameManager>().Miss();
-                FindObjectOfType<AudioManager>().Play("Miss");
+               // FindObjectOfType<AudioManager>().Play("Miss");
             }
         }
     }

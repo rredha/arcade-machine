@@ -5,7 +5,7 @@ using UnityEngine;
 */      
 namespace Arcade._Project.Pong
 {
-    public class PongComputerPaddle : PongPaddle
+    public class ComputerPaddle : Paddle
     {
     
         // first we need to get a reference to the ball, this script doesnt inherite from Ball.cs

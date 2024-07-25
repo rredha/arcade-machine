@@ -6,16 +6,16 @@ using UnityEngine;
 
 namespace Arcade._Project.Pong
 {
-    public class PongGameManager : MonoBehaviour
+    public class GameManager : MonoBehaviour
     {
         public int playerScore;
         public int computerScore;
 
         [SerializeField] TextMeshProUGUI playerScoreText, computerScoreText;
 
-        public PongBall ball;
-        public PongPlayerPaddle pPaddle;
-        public PongComputerPaddle cPaddle;
+        public Ball ball;
+        public PlayerPaddle pPaddle;
+        public ComputerPaddle cPaddle;
 
         public void PlayerScores()
         {

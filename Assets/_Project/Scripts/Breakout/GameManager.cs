@@ -74,7 +74,7 @@ namespace Arcade._Project.Breakout
 
         public void Miss()
         {
-            FindObjectOfType<AudioManager>().Play("Miss");
+           // FindObjectOfType<AudioManager>().Play("Miss");
             this.paddle.ResetPaddle();
             this.lives--;
             ResetGame();

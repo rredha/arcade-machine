@@ -7,12 +7,13 @@ using UnityEngine;
 
 namespace Arcade._Project.Pong
 {
-    public class pPaddle : MonoBehaviour
+    public class Paddle : MonoBehaviour
     {
         // get a rigidbody handler from unity RigidBody component
         // protected vs private, the first one means 
         // that all children objects can use that
         protected Rigidbody2D  _rigidbody;
+        protected Transform tr;
 
         // Speed of the paddle must be accessible through other classes 
         public float speed = 10.0f;
@@ -23,6 +24,7 @@ namespace Arcade._Project.Pong
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+            tr = GetComponent<Transform>();
         }    
     }
 }

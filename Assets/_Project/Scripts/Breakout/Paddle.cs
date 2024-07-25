@@ -117,7 +117,7 @@ namespace Arcade._Project.Breakout
                 ball.GetComponent<Rigidbody2D>().velocity = rotation * Vector2.up * ball.GetComponent<Rigidbody2D>().velocity.magnitude;
 
                 // Playing Hit 
-                FindObjectOfType<AudioManager>().Play("Hit_3");
+               // FindObjectOfType<AudioManager>().Play("Hit_3");
             }
         }
     }
