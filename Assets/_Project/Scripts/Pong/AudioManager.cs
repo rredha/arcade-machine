@@ -9,35 +9,45 @@ namespace Arcade._Project.Pong
 
        private string _gameName;
        private string _clipName;
-       
-       private AudioClip _backgroundAudioClip;
-       private AudioClip HitAudioClip  { get; set; }
-       private AudioClip MissAudioClip { get; set; }
+
+       public AudioClip[] soundTracks;
+       public AudioClip _backgroundAudioClip;
+       public AudioClip _hitAudioClip;
+       public AudioClip _missAudioClip; 
        
        private AudioSource _audioSource;
        private void Awake()
        {
            _audioSource = gameObject.AddComponent<AudioSource>();
            if (myAudioData.gameName != "Pong") return;
-           
-           if (myAudioData.soundTrackConfigArray[0].clipName == "Background")
+           foreach (var soundTrack in myAudioData.soundTrackConfigArray)
            {
-               _backgroundAudioClip = myAudioData.soundTrackConfigArray[0].soundTracks;
-           } else if (myAudioData.soundTrackConfigArray[1].clipName == "Hit")
-           {
-               HitAudioClip = myAudioData.soundTrackConfigArray[1].soundTracks;
-           } else if (myAudioData.soundTrackConfigArray[2].clipName == "Miss")
-           {
-               MissAudioClip = myAudioData.soundTrackConfigArray[2].soundTracks;
+               if (soundTrack.clipName == "Background")
+               {
+                   _backgroundAudioClip = soundTrack.soundTracks;
+               } else if (soundTrack.clipName == "Hit")
+               {
+                   _hitAudioClip = soundTrack.soundTracks;
+               } else if (soundTrack.clipName == "Miss")
+               {
+                   _missAudioClip = soundTrack.soundTracks;
+               }
            }
        }
 
        private void Start()
        {
-           _audioSource.clip = _backgroundAudioClip;
-           _audioSource.loop = myAudioData.soundTrackConfigArray[0].loop;
-           _audioSource.volume = myAudioData.soundTrackConfigArray[0].volume;
+           PlaySound(_backgroundAudioClip, 0);
+       }
+       
+       public void PlaySound(AudioClip audioClip, int idx)
+       {
+           _audioSource.clip = audioClip;
+           _audioSource.loop = myAudioData.soundTrackConfigArray[idx].loop;
+           _audioSource.volume = myAudioData.soundTrackConfigArray[idx].volume;
            _audioSource.Play();
        }
-    }
+           
+       }
+    
 }
