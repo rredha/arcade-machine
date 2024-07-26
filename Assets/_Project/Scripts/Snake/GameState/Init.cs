@@ -6,11 +6,8 @@ namespace Arcade._Project.Snake.GameState
 {
     public class Init : State<LevelManager.LevelState>
     {
-        public Init(LevelManager.LevelState key, GameObject snakeHead, GameObject segmentPrefab) : base(key, snakeHead, segmentPrefab)
+        public Init(LevelManager.LevelState key) : base(key)
         {
-            _snakeHead = snakeHead;
-            _segmentPrefab = segmentPrefab;
-
         }
 
         private Vector2 dir;

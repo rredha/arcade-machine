@@ -23,12 +23,10 @@ namespace Arcade._Project.Snake
 
         private void InitialiazeStates()
         {
-            States.Add(LevelState.Init, new Init(LevelState.Init, snakeHead, segmentPrefab));
+            States.Add(LevelState.Init, new Init(LevelState.Init));
             //States.Add(LevelState.Playing, new Playing(LevelState.Playing, snakeHead, segmentPrefab));
-            States.Add(LevelState.Lost, new Lost(LevelState.Lost, snakeHead, segmentPrefab));
+            States.Add(LevelState.Lost, new Lost(LevelState.Lost));
             CurrentState = States[LevelState.Init];
         }
-        [SerializeField] private GameObject segmentPrefab; // a prefab for the snake head !
-        [SerializeField] private GameObject snakeHead;
     }
 }

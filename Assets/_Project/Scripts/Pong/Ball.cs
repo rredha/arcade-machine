@@ -12,21 +12,21 @@ namespace Arcade._Project.Pong
         public bool isRandom = true;
 
         public float ballSpeed = 100.0f;
-        public float x=0.5f;
-        public float y=-0.5f;
+        public float x = 0.5f;
+        public float y = -0.5f;
         private float xRandomDir, yRandomDir;
 
-     
+
         private void Start()
         {
             ResetPosition();
         }
-    
+
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
-        } 
+        }
 
         // the problem here is that this speed is not used anywhere eles ! 
         // it is just incremented, hence i should add something to modify the ball speed.
@@ -55,14 +55,20 @@ namespace Arcade._Project.Pong
             _rigidbody.position = Vector2.zero;
             _rigidbody.velocity = Vector2.zero;
 
+            LaunchBall();
 
+        }
+
+        public void LaunchBall()
+        {
             if (isRandom)
             {
                 xRandomDir = Random.value > 0.5f ? x = 1.0f : x = -1.0f;
                 yRandomDir = Random.value > 0.5f ? y = Random.Range(-1.0f, -0.5f) : Random.Range(0.5f, 1.0f);
             }
-            Vector2 direction = new Vector2(x,y);
-            _rigidbody.AddForce(direction*ballSpeed);    }
 
+            Vector2 direction = new Vector2(x, y);
+            _rigidbody.AddForce(direction * ballSpeed);
+        }
     }
 }

@@ -1,33 +1,32 @@
-
 using Arcade._Project.Core.StateMachine;
 using UnityEngine;
 
-namespace Arcade._Project.Snake.GameState
+namespace Arcade._Project.Pong
 {
-    public class Lost:State<LevelManager.LevelState>
+    public class PlayingState : State<GameStateMachine.GameStateEnum>
     {
-        public Lost(LevelManager.LevelState key) : base(key)
+        public PlayingState(GameStateMachine.GameStateEnum key) : base(key)
         {
         }
 
         public override void EnterState()
         {
-            Debug.Log("Hello From Init State");
+            Debug.Log("We are in the EnterState of PlayingState");
         }
 
         public override void ExitState()
         {
-            Debug.Log("Exiting Lost State");
+            Debug.Log("We are in the ExitState of PlayingState");
         }
 
         public override void UpdateState()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("We are in the UpdateState of PlayingState");
         }
 
-        public override LevelManager.LevelState GetNextState()
+        public override GameStateMachine.GameStateEnum GetNextState()
         {
-            return LevelManager.LevelState.Init;
+            throw new System.NotImplementedException();
         }
 
         public override void OnTriggerEnter(Collider other)
@@ -44,6 +43,5 @@ namespace Arcade._Project.Snake.GameState
         {
             throw new System.NotImplementedException();
         }
-
     }
 }
