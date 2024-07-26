@@ -10,11 +10,11 @@ namespace Arcade._Project.Pong
        private string _gameName;
        private string _clipName;
 
-       public AudioClip[] soundTracks;
-       public AudioClip _backgroundAudioClip;
-       public AudioClip _hitAudioClip;
-       public AudioClip _missAudioClip; 
-       
+       private AudioClip[] soundTracks;
+       private AudioClip _backgroundAudioClip;
+       public AudioClip _hitAudioClip {  get; private set; }
+       public AudioClip _missAudioClip { get; private set; }
+
        private AudioSource _audioSource;
        private void Awake()
        {

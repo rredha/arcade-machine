@@ -3,10 +3,18 @@ using UnityEngine.EventSystems;
 
 namespace Arcade._Project.Pong
 {
-    public class PongScoringZone : MonoBehaviour
+    public class ScoringZone : MonoBehaviour
     {
         public EventTrigger.TriggerEvent scoreTrigger;
 
+        private AudioSource _audioSource;
+
+        private void Awake()
+        {
+            _audioSource = this.GetComponent<AudioSource>();
+            var audioManager = FindObjectOfType<AudioManager>();
+            _audioSource.clip = audioManager._missAudioClip;
+        }
         private void OnCollisionEnter2D(Collision2D col)
         {
             //gives us the object that collided with our object
@@ -16,6 +24,7 @@ namespace Arcade._Project.Pong
             {
                 BaseEventData eventData = new BaseEventData(EventSystem.current);
                 scoreTrigger.Invoke(eventData);
+                _audioSource.Play();
             }
         }
     }

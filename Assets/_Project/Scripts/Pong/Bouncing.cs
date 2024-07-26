@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Arcade._Project.Pong
 {
-    public class PongBouncing : MonoBehaviour
+    public class Bouncing : MonoBehaviour
     {
-        private AudioSource _audioSource;
         public float bouncingStrength = 1.0f;
+        private AudioSource _audioSource;
 
         private void Awake()
         {
@@ -24,12 +24,7 @@ namespace Arcade._Project.Pong
                 Vector2 normal = col.GetContact(0).normal;
                 ball.AddForceBall(-normal*this.bouncingStrength);
 
-                // Playing Hit 
-                
-                
-                //FindObjectOfType<AudioManager>().Play("Hit_3");
                 var audioManager = FindObjectOfType<AudioManager>();
-                //audioManager.PlaySound(audioManager._hitAudioClip, 1);
                 _audioSource.clip = audioManager._hitAudioClip;
                 _audioSource.Play();
             }
