@@ -30,6 +30,7 @@ namespace Arcade._Project.Core.StateMachine
             }
 
         }
+
         public void TransitionToState(TEnumState stateKey)
         {
             IsTransitionState = true;

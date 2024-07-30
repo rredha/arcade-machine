@@ -1,32 +1,32 @@
-using Arcade._Project.Core.StateMachine;
 using UnityEngine;
 
-namespace Arcade._Project.Pong
+namespace Arcade._Project.Pong.GameStateMachine
 {
-    public class PlayingState : State<GameStateMachine.GameStateEnum>
+    public class PlayingState : GameState
     {
-        public PlayingState(GameStateMachine.GameStateEnum key) : base(key)
+        public PlayingState(GameStateContext context, GameStateMachine.GameStateEnum key) : base(context, key)
         {
+            GameStateContext Context = context;
         }
 
         public override void EnterState()
         {
-            Debug.Log("We are in the EnterState of PlayingState");
+            Debug.Log("Init - PlayingState");
         }
 
         public override void ExitState()
         {
-            Debug.Log("We are in the ExitState of PlayingState");
+            Debug.Log("Exit - PlayingState");
         }
 
         public override void UpdateState()
         {
-            Debug.Log("We are in the UpdateState of PlayingState");
+            Debug.Log("Exit - PlayingState");
         }
 
         public override GameStateMachine.GameStateEnum GetNextState()
         {
-            throw new System.NotImplementedException();
+            return StateKey;
         }
 
         public override void OnTriggerEnter(Collider other)
