@@ -12,6 +12,10 @@ namespace Arcade._Project.Pong.GameStateMachine
         public override void EnterState()
         {
             Debug.Log("Init - EnterState");
+            Context.PlayerPaddle.GetComponent<PlayerPaddle>().ResetPosition();
+            Context.ComputerPaddle.GetComponent<ComputerPaddle>().ResetPosition();
+            Context.Ball.GetComponent<Ball>().ResetPosition();
+            Countdown.Enable();
         }
 
 
@@ -19,20 +23,19 @@ namespace Arcade._Project.Pong.GameStateMachine
         public override void UpdateState()
         {
             Debug.Log("Init - UpdateState");
-            Countdown.Enable();
             Countdown.Begin();
             Countdown.Disable();
         }
         public override void ExitState()
         {
-            
             Debug.Log("Init - ExitState");
+            Context.Ball.GetComponent<Ball>().LaunchBall();
         }
 
         public override GameStateMachine.GameStateEnum GetNextState()
         {
-            //return GameStateMachine.GameStateEnum.Playing;
-            return StateKey;
+            return GameStateMachine.GameStateEnum.Playing;
+            //return StateKey;
         }
 
         public override void OnTriggerEnter(Collider other)
