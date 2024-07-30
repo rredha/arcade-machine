@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using Arcade._Project.Core.UI;
 namespace Arcade._Project.Pong.GameStateMachine
 {
     public class InitState : GameState
@@ -15,9 +15,13 @@ namespace Arcade._Project.Pong.GameStateMachine
         }
 
 
+        // ReSharper disable Unity.PerformanceAnalysis
         public override void UpdateState()
         {
             Debug.Log("Init - UpdateState");
+            Countdown.Enable();
+            Countdown.Begin();
+            Countdown.Disable();
         }
         public override void ExitState()
         {
@@ -27,8 +31,8 @@ namespace Arcade._Project.Pong.GameStateMachine
 
         public override GameStateMachine.GameStateEnum GetNextState()
         {
-            return GameStateMachine.GameStateEnum.Playing;
-            //return StateKey;
+            //return GameStateMachine.GameStateEnum.Playing;
+            return StateKey;
         }
 
         public override void OnTriggerEnter(Collider other)

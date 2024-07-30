@@ -40,7 +40,6 @@ namespace Arcade._Project.Core.StateMachine
             IsTransitionState = false;
         }
 
-        // should it be oncolliderenter ?
         private void OnTriggerEnter(Collider other)
         {
             CurrentState.OnTriggerEnter(other);
