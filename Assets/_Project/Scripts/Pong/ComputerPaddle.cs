@@ -13,6 +13,10 @@ namespace Arcade._Project.Pong
             tr.position = new Vector2 (8.0f,0.0f);
         }
 
+        private void Update()
+        {
+            FollowBall();
+        }
 
         public void FollowBall() 
         {

@@ -3396,6 +3396,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 1717018159}
+  _playerPaddle: {fileID: 1730160019}
+  _computerPaddle: {fileID: 450954218}
+  _ball: {fileID: 15475657}
 --- !u!1 &2108454867
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,8 +21,6 @@ namespace Arcade._Project.Pong.GameStateMachine
 
         public override void UpdateState()
         {
-            Debug.Log("Exit - PlayingState");
-            Context.ComputerPaddle.GetComponent<ComputerPaddle>().FollowBall();
             var playerInputDirection = Context.PlayerPaddle.GetComponent<PlayerPaddle>().direction;
             Context.PlayerPaddle.GetComponent<PlayerPaddle>().MovePaddle(playerInputDirection);
 
