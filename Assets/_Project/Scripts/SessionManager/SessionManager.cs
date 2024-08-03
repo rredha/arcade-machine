@@ -1,4 +1,4 @@
-namespace Arcade._Project.Core.SessionManager
+namespace Arcade._Project.SessionManager
 {
     public class SessionManager
     {
