@@ -17,7 +17,7 @@ namespace Arcade._Project.Pong
 
         private Vector2 GetPlayerInputDirection()
         {
-            
+
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 return Vector2.up;
@@ -34,7 +34,7 @@ namespace Arcade._Project.Pong
         {
             if (dir.sqrMagnitude > 0) {
                 _rigidbody.AddForce(dir * speed);
-            } 
+            }
         }
     }
 }

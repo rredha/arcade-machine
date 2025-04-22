@@ -18,16 +18,16 @@ namespace Arcade._Project.Pong
 
             if (Result != GameResult.Init)
             {
-               Debug.LogError("States Not Set Properly"); 
+               Debug.LogError("States Not Set Properly");
             }
-            
+
             if (ball != null)
             {
                 if (this.CompareTag("Player"))
                 {
                     Result = GameResult.Lose;
                 }
-                else 
+                else
                 {
                     Result = GameResult.Win;
                 }

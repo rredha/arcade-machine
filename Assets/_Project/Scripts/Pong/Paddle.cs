@@ -1,6 +1,6 @@
 using UnityEngine;
 
-/* 
+/*
     @brief : defines Paddle’s behaviour shared between
              Players and Computers Paddle.
 */
@@ -10,12 +10,12 @@ namespace Arcade._Project.Pong
     public class Paddle : MonoBehaviour
     {
         // get a rigidbody handler from unity RigidBody component
-        // protected vs private, the first one means 
+        // protected vs private, the first one means
         // that all children objects can use that
         protected Rigidbody2D  _rigidbody;
         protected Transform tr;
 
-        // Speed of the paddle must be accessible through other classes 
+        // Speed of the paddle must be accessible through other classes
         public float speed = 10.0f;
 
         // this function get executed once in the life time of the app
@@ -25,6 +25,6 @@ namespace Arcade._Project.Pong
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             tr = GetComponent<Transform>();
-        }    
+        }
     }
 }
