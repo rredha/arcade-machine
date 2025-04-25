@@ -15,14 +15,14 @@ namespace Arcade._Project.Snake.GameState
         protected Rigidbody2D rb;
         public float timeStep = 0.06f;
         public int score = 0;
-        
-        private GameObject _snakeHead;
-        public List<GameObject> segments = new List<GameObject>(); 
-        public GameObject _segmentPrefab; 
-        
-        public int initSize = 4; 
 
-    
+        private GameObject _snakeHead;
+        public List<GameObject> segments = new List<GameObject>();
+        public GameObject _segmentPrefab;
+
+        public int initSize = 4;
+
+
 
         private void Awake()
         {
@@ -50,7 +50,7 @@ namespace Arcade._Project.Snake.GameState
             {
                 dir = Vector2.right;
                 prevDir = dir;
-            } else 
+            } else
             {
                 dir = Vector2.zero;
             }
@@ -80,9 +80,9 @@ namespace Arcade._Project.Snake.GameState
             {
                 resetGame();
             }
-   
+
         }
-    
+
         private void resetGame()
         {
             for (int i = 1; i < segments.Count; i++)
@@ -101,11 +101,11 @@ namespace Arcade._Project.Snake.GameState
 
             _snakeHead.transform.position = Vector3.zero;
         }
-    
+
         private void growSnake()
         {
-            GameObject segment = Instantiate(_segmentPrefab); 
-        
+            GameObject segment = Instantiate(_segmentPrefab);
+
             segment.transform.position = segments[segments.Count - 1].transform.position;
             segments.Add(segment);
         }

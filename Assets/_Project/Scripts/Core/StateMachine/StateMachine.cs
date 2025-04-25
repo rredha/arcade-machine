@@ -20,7 +20,7 @@ namespace Arcade._Project.Core.StateMachine
         void Update()
         {
             TEnumState nextStateKey = CurrentState.GetNextState();
-            
+
             if (!IsTransitionState && nextStateKey.Equals(CurrentState.StateKey))
             {
                 CurrentState.UpdateState();

@@ -31,12 +31,12 @@ namespace Arcade._Project.Breakout
 
         private void FixedUpdate()
         {
-            rb.velocity = rb.velocity.normalized * speed;
+            rb.linearVelocity = rb.linearVelocity.normalized * speed;
         }
 
         public void ResetBall()
         {
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
             rb.position = Vector2.zero;
 
             Invoke(nameof(SetRandomTrajectory), 1f);

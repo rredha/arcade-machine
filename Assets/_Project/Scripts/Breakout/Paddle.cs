@@ -80,7 +80,7 @@ namespace Arcade._Project.Breakout
         {
         
             this.transform.position = new Vector2(0.0f,this.transform.position.y);
-            this.rb.velocity = new Vector2(0.0f,0.0f);
+            this.rb.linearVelocity = new Vector2(0.0f,0.0f);
         }
 
     
@@ -106,7 +106,7 @@ namespace Arcade._Project.Breakout
 
                 float offset = paddlePosition.x - contactPoints.x;
 
-                float currentAngle = Vector2.SignedAngle(Vector2.up, ball.GetComponent<Rigidbody2D>().velocity);
+                float currentAngle = Vector2.SignedAngle(Vector2.up, ball.GetComponent<Rigidbody2D>().linearVelocity);
                 float maxOffset = col.otherCollider.bounds.size.x /2;
 
 
@@ -114,7 +114,7 @@ namespace Arcade._Project.Breakout
                 float newAngle = Mathf.Clamp(currentAngle + bounceAngle, -maxBounceAngle, maxBounceAngle);
 
                 Quaternion rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
-                ball.GetComponent<Rigidbody2D>().velocity = rotation * Vector2.up * ball.GetComponent<Rigidbody2D>().velocity.magnitude;
+                ball.GetComponent<Rigidbody2D>().linearVelocity = rotation * Vector2.up * ball.GetComponent<Rigidbody2D>().linearVelocity.magnitude;
 
                 // Playing Hit 
                // FindObjectOfType<AudioManager>().Play("Hit_3");

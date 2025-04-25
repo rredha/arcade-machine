@@ -6,7 +6,6 @@ namespace Arcade._Project.Core.StateMachine
 {
     public abstract class State<TEnumState> : MonoBehaviour where TEnumState : Enum
     {
-        // source from 
         public State(TEnumState key)
         {
             StateKey = key;
