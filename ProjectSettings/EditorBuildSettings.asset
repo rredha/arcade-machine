@@ -26,4 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Snake/Snake.unity
     guid: 6a08dfb11efc3964981ee220b33c8b51
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: c19ad4a5bf59e46e199d22f33617d308, type: 3}
+  m_UseUCBPForAssetBundles: 0

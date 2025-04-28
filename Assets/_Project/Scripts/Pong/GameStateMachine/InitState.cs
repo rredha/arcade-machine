@@ -22,13 +22,13 @@ namespace Arcade._Project.Pong.GameStateMachine
         // ReSharper disable Unity.PerformanceAnalysis
         public override void UpdateState()
         {
-            Debug.Log("Init - UpdateState");
+            //Debug.Log("Init - UpdateState");
             Countdown.Begin();
             Countdown.Disable();
         }
         public override void ExitState()
         {
-            Debug.Log("Init - ExitState");
+            //Debug.Log("Init - ExitState");
             Context.Ball.GetComponent<Ball>().LaunchBall();
         }
 

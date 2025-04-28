@@ -1,35 +1,28 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Arcade._Project.Pong
 {
     public class PlayerPaddle : Paddle
     {
+        private InputAction moveAction;
         public Vector2 direction { private set; get; }
 
+        private void Start()
+        {
+          moveAction = InputSystem.actions.FindAction("Move");
+        }
         public void ResetPosition(){
             tr.position = new Vector2 (-8.0f,0.0f);
         }
 
         private void Update()
         {
-            direction = GetPlayerInputDirection();
+          Vector2 moveValue = moveAction.ReadValue<Vector2>();
+          MovePaddle(moveValue);
+
         }
 
-        private Vector2 GetPlayerInputDirection()
-        {
-
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                return Vector2.up;
-            }
-            else if (Input.GetKey(KeyCode.DownArrow))
-            {
-                return Vector2.down;
-            } else
-            {
-                return Vector2.zero;
-            }
-        }
         public void MovePaddle(Vector2 dir)
         {
             if (dir.sqrMagnitude > 0) {

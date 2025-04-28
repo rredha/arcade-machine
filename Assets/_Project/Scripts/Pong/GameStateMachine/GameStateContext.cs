@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Arcade._Project.Pong.GameStateMachine
 {
-    public class GameStateContext 
+    public class GameStateContext
     {
         private GameManager _gameManager;
         private GameObject _playerPaddle;

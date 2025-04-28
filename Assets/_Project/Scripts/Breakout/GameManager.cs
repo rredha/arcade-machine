@@ -47,13 +47,13 @@ namespace Arcade._Project.Breakout
         which means getting the reference from other gameobject or functions
         that does not exist at the time of starting the GameManager.cs script
         (Awake() or Start()).
-    
+
         To get the reference to these we follow these steps :
             - Subscribe to the unity event : SceneManager.Sceneloaded ! from LoadLevel() func.
             - Create a function that gets called any time the scene is loaded.
             - Then we can find the Ojects using FindObjectOfType<gameObject.name>();
         */
-            this.ball.ResetBall(); //need to be public 
+            this.ball.ResetBall(); //need to be public
             this.paddle.ResetPaddle();
         }
 
@@ -104,9 +104,9 @@ namespace Arcade._Project.Breakout
                 {
                     return false;
                 }
-            } 
+            }
             return true;
-        
+
         }
 
 
@@ -120,7 +120,7 @@ namespace Arcade._Project.Breakout
             // in files, build settings, we should add the scenes that will be included in the executable.
             // drag and drop them into the interface.
             // better to load them by name.
-            SceneManager.LoadScene("BreakOutLevel"+level); 
+            SceneManager.LoadScene("BreakOutLevel"+level);
 
             // subscribe to the event when the scene is loaded.
             SceneManager.sceneLoaded += OnLevelLoaded;
