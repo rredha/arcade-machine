@@ -15,15 +15,15 @@ public enum Tetromino
 [System.Serializable]
 public struct TetrominoData
 {
-    public Tetromino tetromino;
     public Tile tile;
-    public Vector2Int[] cells {get; private set;}
+    public Tetromino tetromino;
+
+    public Vector2Int[] cells { get; private set; }
+    public Vector2Int[,] wallKicks { get; private set; }
 
     public void Initialize()
     {
-        //Debug.Log("Initialize() <- TetrominoData class <- Tetromino.cs got called");
-        this.cells = Data.Cells[this.tetromino];
-        //Debug.Log("tetromino : " + this.tetromino);
-       // Debug.Log(Data.Cells[this.tetromino].ToString());
+        cells = Data.Cells[tetromino];
+        wallKicks = Data.WallKicks[tetromino];
     }
 }

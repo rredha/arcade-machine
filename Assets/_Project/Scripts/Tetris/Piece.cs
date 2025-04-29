@@ -121,7 +121,7 @@ public class Piece : MonoBehaviour
     private void Lock()
     {
         board.Set(this);
-        //board.ClearLines();
+        board.ClearLines();
         board.SpawnPiece();
     }
 
@@ -154,14 +154,12 @@ public class Piece : MonoBehaviour
         rotationIndex = Wrap(rotationIndex + direction, 0, 4);
         ApplyRotationMatrix(direction);
 
-       /*
         // Revert the rotation if the wall kick tests fail
         if (!TestWallKicks(rotationIndex, direction))
         {
             rotationIndex = originalRotation;
             ApplyRotationMatrix(-direction);
         }
-        */
     }
 
     private void ApplyRotationMatrix(int direction)
@@ -196,7 +194,6 @@ public class Piece : MonoBehaviour
         }
     }
 
-    /*
     private bool TestWallKicks(int rotationIndex, int rotationDirection)
     {
         int wallKickIndex = GetWallKickIndex(rotationIndex, rotationDirection);
@@ -223,7 +220,6 @@ public class Piece : MonoBehaviour
 
         return Wrap(wallKickIndex, 0, data.wallKicks.GetLength(0));
     }
-    */
 
     private int Wrap(int input, int min, int max)
     {
