@@ -1,0 +1,18 @@
+{
+    "name": "Project.Runtime.Game.Snake",
+    "rootNamespace": "",
+    "references": [
+        "GUID:55860ef12c6625731948471b7fe8c01a",
+        "GUID:33d65604064fc2b2aadb164651c58dd6",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

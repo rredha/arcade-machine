@@ -1,0 +1,18 @@
+{
+    "name": "Project.Runtime.Game.Pong",
+    "rootNamespace": "",
+    "references": [
+        "GUID:55860ef12c6625731948471b7fe8c01a",
+        "GUID:33d65604064fc2b2aadb164651c58dd6",
+        "GUID:181b3c65f8415cea89e07722add63391"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
