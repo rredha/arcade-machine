@@ -1,3 +1,16 @@
 {
-	"name": "Project.Runtime.Core.StateMachine"
+    "name": "Project.Runtime.Core.StateMachine",
+    "rootNamespace": "",
+    "references": [
+        "GUID:33d65604064fc2b2aadb164651c58dd6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

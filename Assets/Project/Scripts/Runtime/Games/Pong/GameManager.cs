@@ -1,4 +1,4 @@
-using TMPro;
+//using TMPro;
 using UnityEngine;
 
 namespace Arcade.Project.Runtime.Games.Pong
@@ -8,7 +8,7 @@ namespace Arcade.Project.Runtime.Games.Pong
         public int playerScore;
         public int computerScore;
 
-        [SerializeField] TextMeshProUGUI playerScoreText, computerScoreText;
+//        [SerializeField] TextMeshProUGUI playerScoreText, computerScoreText;
 
         public Ball ball;
         public PlayerPaddle pPaddle;
@@ -19,7 +19,7 @@ namespace Arcade.Project.Runtime.Games.Pong
             playerScore++;
             Debug.Log("Player Scores : " + playerScore);
 
-            playerScoreText.text = playerScore.ToString();
+            //playerScoreText.text = playerScore.ToString();
             this.ball.ResetPosition();
             this.pPaddle.ResetPosition();
             this.cPaddle.ResetPosition();
@@ -30,7 +30,7 @@ namespace Arcade.Project.Runtime.Games.Pong
             computerScore++;
             Debug.Log("Computer Scores : " + computerScore);
 
-            computerScoreText.text = computerScore.ToString();
+            //computerScoreText.text = computerScore.ToString();
             this.ball.ResetPosition();
             this.pPaddle.ResetPosition();
             this.cPaddle.ResetPosition();
