@@ -4,9 +4,6 @@ namespace Arcade.Project.Runtime.Games.Pong
 {
     public class Ball : MonoBehaviour
     {
-        /* @brief : implements the ball initial starting direction
-                the physics is taken into account by the unity physics engine
-    */
         protected Rigidbody2D _rigidbody;
 
         public bool isRandom = true;

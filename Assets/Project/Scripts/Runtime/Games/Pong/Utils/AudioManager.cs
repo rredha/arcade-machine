@@ -48,6 +48,6 @@ namespace Arcade.Project.Runtime.Games.Pong
            _audioSource.Play();
        }
 
-       }
+     }
 
 }

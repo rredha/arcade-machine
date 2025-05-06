@@ -1,8 +1,5 @@
 using UnityEngine;
 
-/* @brief : track position of the ball, either move up or down depending on that
-            else idle in the middle of the screen.
-*/
 namespace Arcade.Project.Runtime.Games.Pong
 {
     public class ComputerPaddle : Paddle

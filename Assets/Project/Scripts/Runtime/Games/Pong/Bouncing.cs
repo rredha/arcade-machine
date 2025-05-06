@@ -1,5 +1,4 @@
 using System;
-//using Arcade._Project.Breakout;
 using UnityEngine;
 
 namespace Arcade.Project.Runtime.Games.Pong
