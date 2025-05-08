@@ -1,41 +1,39 @@
 using UnityEngine;
+using InputSystem;
 using Arcade.Project.Runtime.Games.AngryBird.Cues;
 using Arcade.Project.Runtime.Games.AngryBird.Interfaces;
 
 namespace Arcade.Project.Runtime.Games.AngryBird
 {
-  public class Pointer : MonoBehaviour
+  public class Pointer : MonoBehaviour, IMovable
   {
-      [SerializeField] private IVisualCue highlight;
+    [SerializeField] private IVisualCue highlight;
+    [SerializeField] private Collider2D otherCollider;
 
-      private Camera _camera;
-      private Collider2D _collider;
-      [SerializeField] private Collider2D otherCollider;
+    private Camera _camera;
+    private Collider2D _collider;
+    private Vector3 _mousePosWorld;
+    private Vector3 _mousePosScreen;
 
-      private Vector3 _mousePosWorld;
-      private Vector3 _mousePosScreen;
-      private void Awake()
-      {
-          _camera = Camera.main;
-          _collider = GetComponent<Collider2D>();
-          _collider.isTrigger = true;
-      }
+    private void Awake()
+    {
+      _camera = Camera.main;
+      _collider = GetComponent<Collider2D>();
+      _collider.isTrigger = true;
+    }
 
-      private void FixedUpdate()
-      {
-          _mousePosScreen = Input.mousePosition;
-          if (_camera) _mousePosScreen.z = 10;
-          _mousePosWorld = _camera.ScreenToWorldPoint(_mousePosScreen);
+    private void FixedUpdate()
+    {
+      Move();
+    }
 
-         // if (_collider.IsTouching(otherCollider));
+    public void Move()
+    {
+      _mousePosScreen = Input.mousePosition;
+      if (_camera) _mousePosScreen.z = 10;
+      _mousePosWorld = _camera.ScreenToWorldPoint(_mousePosScreen);
 
-          /*
-          if (Physics2D.IsTouching(_collider, _otherCollider)) ;
-          var numberOfContacts = Physics2D.OverlapPoint(_mousePosWorld, new ContactFilter2D().NoFilter(), _overlapColliders);
-          if (numberOfContacts != null ) ;
-          */
-
-          transform.position = _mousePosWorld;
-      }
+      transform.position = _mousePosWorld;
+    }
   }
 }
