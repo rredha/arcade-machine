@@ -651,7 +651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e6a97604ae4a91b9cebc007b8246bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherCollider: {fileID: 0}
+  _otherCollider: {fileID: 1689315733}
 --- !u!1 &254506944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,6 +1293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bf090dc554a4d9ae9b38b4f8b43cce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  config: {fileID: 0}
   lineRenderers:
   - {fileID: 897847358}
   - {fileID: 692659463}
@@ -1300,7 +1301,6 @@ MonoBehaviour:
   - {fileID: 1654076822}
   - {fileID: 685199100}
   center: {fileID: 892099863}
-  config: {fileID: 0}
   projectilePlaceholder: {fileID: 1610692387}
   projectilePrefab: {fileID: 3304457424203430322, guid: d1c2625f194f752818182b45cbddef35, type: 3}
   Projectile: {fileID: 0}

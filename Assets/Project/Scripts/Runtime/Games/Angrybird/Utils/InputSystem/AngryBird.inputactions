@@ -1,0 +1,54 @@
+{
+    "name": "AngryBird",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "cd939c4f-5798-44a2-bcc5-0ca9bf25df03",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "33fe5446-0279-40b7-9b5b-4102f5897ed9",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "05b9d4c2-8cb3-4ba5-ab0b-be04c417cb7c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fc71465a-2cec-4a45-beb1-7bd0def56b96",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8008d6ea-67f4-43d4-a357-2019626834df",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -4,9 +4,9 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Interfaces
 {
     public interface IVisualCue
     {
-        public void Cue(GameObject gameObject);
-        public void OnCueActivated(GameObject gameObject);
-        public void OnCueDisabled(GameObject gameObject);
-        public void OnCueToggle(GameObject gameObject);
+        public void Cue(SpriteRenderer sp);
+        public void OnCueActivated(SpriteRenderer sp);
+        public void OnCueDisabled(SpriteRenderer sp);
+        public void OnCueToggle(SpriteRenderer sp);
     }
 }

@@ -38,13 +38,13 @@ namespace Arcade.Project.Runtime.Games.AngryBird
         public void SelectActionPerform()
         {
             if (!_isSelected) return;
-            colorChange.OnCueActivated(this.gameObject);
+            colorChange.OnCueActivated(_spriteRenderer);
         }
 
         public void HoverActionPerform()
         {
             if (_isSelected) return;
-            highlight.OnCueActivated(this.gameObject);
+            highlight.OnCueActivated(_spriteRenderer);
         }
 
     }
