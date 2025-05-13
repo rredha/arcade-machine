@@ -9,6 +9,15 @@ namespace Arcade.Project.Runtime.Games.AngryBird
   {
     [SerializeField] private Projectile Projectile;
 
+    public IEnumerator Spawn(Transform location)
+    {
+
+      Instantiate(Projectile.gameObject,
+                  location.position ,Quaternion.identity);
+
+      yield return null;
+    }
+
     public IEnumerator Spawn(Transform location, Transform parent)
     {
 

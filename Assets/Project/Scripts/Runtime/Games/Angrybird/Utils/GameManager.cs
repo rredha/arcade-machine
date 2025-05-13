@@ -10,7 +10,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird
 
     private void Awake()
     {
-      StartCoroutine(Spawner.Spawn(CenterOfTheScreen, this.transform));
+      StartCoroutine(Spawner.Spawn(CenterOfTheScreen));
     }
   }
 }
