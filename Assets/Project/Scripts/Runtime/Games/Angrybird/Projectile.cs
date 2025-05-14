@@ -5,6 +5,7 @@ using Arcade.Project.Runtime.Games.AngryBird.Interfaces;
 
 namespace Arcade.Project.Runtime.Games.AngryBird
 {
+  // projectile is better suited to be event based.
     public class Projectile : MonoBehaviour
     {
         [SerializeField] private IVisualCue highlight;
@@ -26,7 +27,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird
 
         public void SetStatic()
         {
-            Col.enabled = false;
+            Col.enabled = true;
             Rb.bodyType = RigidbodyType2D.Kinematic;
         }
         public void SetDynamic()

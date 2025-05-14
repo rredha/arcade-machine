@@ -10,8 +10,6 @@ namespace Arcade.Project.Runtime.Games.AngryBird
 {
   public class Slingshot : MonoBehaviour
   {
-    [SerializeField] private IVisualCue contour;
-
     [SerializeField] private SlingshotConfiguration config;
 
     [SerializeField] private LineRenderer[] lineRenderers;
@@ -23,9 +21,12 @@ namespace Arcade.Project.Runtime.Games.AngryBird
     private Vector3 _pointerWorldPosition;
     private Vector2 _pointerScreenPosition;
 
-
     private Vector3 _currentPosition;
     private Camera _camera;
+
+    private Projectile proj;
+    private Color _defaultColor;
+    private LayerMask _layerMask;
 
     private void Awake()
     {
@@ -33,6 +34,8 @@ namespace Arcade.Project.Runtime.Games.AngryBird
       _playerInputActions = new PlayerInputActions();
       _playerInputActions.Player.Enable();
       _playerInputActions.Player.Aim.performed += Aim_performed;
+
+      _layerMask = LayerMask.GetMask("Selectables");
     }
 
     private void Start()
@@ -44,21 +47,42 @@ namespace Arcade.Project.Runtime.Games.AngryBird
       lineRenderers[1].SetPosition(0, rubberPositions[1].position);
     }
 
+
+    private void FixedUpdate()
+    {
+      ResetRubber();
+
+      // state pattern needed.
+      var collider = Physics2D.OverlapPoint(projectilePlaceholder.position, _layerMask, -Mathf.Infinity, +Mathf.Infinity);
+      if (collider != null)
+      {
+        proj = collider.GetComponentInChildren<Projectile>();
+        if (proj != null)
+        {
+          // if not using the release from select action.
+          // else in select action performed, drop the projectile in the placeholder.
+          proj.transform.SetParent(projectilePlaceholder.transform);
+          SetRubber(_pointerWorldPosition);
+        }
+      }
+    }
+
+    private void SetRubber(Vector3 position)
+    {
+      position = center.position + Vector3.ClampMagnitude(position - center.position, config.maxLength);
+      position.y = Mathf.Clamp(position.y, config.bottomBoundary, 1000);
+
+      lineRenderers[0].SetPosition(1, position);
+      lineRenderers[1].SetPosition(1, position);
+
+      // fix later, projectile position is the one that needs updating.
+      projectilePlaceholder.transform.position = position;
+    }
+
     private void Aim_performed(InputAction.CallbackContext ctx)
     {
       // convert form screen to world position.
       _pointerWorldPosition = ScreenToWorldPosition(ctx.ReadValue<Vector2>());
-
-      /*
-      if (_camera) _currentPosition = _camera.ScreenToWorldPoint(mousePosition);
-      _currentPosition = center.position + Vector3.ClampMagnitude(_currentPosition - center.position,
-                                                                         config.maxLength);
-
-      _currentPosition = new Vector3(
-                    _currentPosition.x,
-        Mathf.Clamp(_currentPosition.y, config.bottomBoundary, 1000)
-        );
-        */
     }
 
     private Vector3 ScreenToWorldPosition(Vector2 screenPosition)
@@ -67,41 +91,10 @@ namespace Arcade.Project.Runtime.Games.AngryBird
       return new Vector3(worldPosition.x, worldPosition.y, 0);
     }
 
-    private void FixedUpdate()
+    private void ResetRubber()
     {
-      SetRubber(_pointerWorldPosition);
-      /*
-      if (_isMouseDown)
-      {
-        var mousePosition = Input.mousePosition;
-        mousePosition.z = 10;
-
-        if (_camera) _currentPosition = _camera.ScreenToWorldPoint(mousePosition);
-        _currentPosition = center.position + Vector3.ClampMagnitude(_currentPosition - center.position,
-                                                                           config.maxLength);
-
-        _currentPosition = new Vector3(
-                      _currentPosition.x,
-          Mathf.Clamp(_currentPosition.y, config.bottomBoundary, 1000)
-          );
-      }
-      */
+      SetRubber(projectilePlaceholder.position);
     }
-
-
-
-      private void SetRubber(Vector3 position)
-      {
-        lineRenderers[0].SetPosition(1, position);
-        lineRenderers[1].SetPosition(1, position);
-
-        /*
-        projectilePlaceholder.transform.position.Set(position.x,
-                                                     position.y,
-                                                     0);
-        */
-      }
-
     private void Shoot()
     {
       /*
@@ -113,11 +106,6 @@ namespace Arcade.Project.Runtime.Games.AngryBird
     */
     }
       /*
-      private void OnMouseDown()
-      {
-        _isMouseDown = true;
-      }
-
       private void OnMouseUp()
       {
         _isMouseDown = false;
@@ -145,11 +133,6 @@ namespace Arcade.Project.Runtime.Games.AngryBird
         }
         */
       /*
-      private void ResetRubber()
-      {
-        _currentPosition = projectilePlaceholder.position;
-        SetRubber(_currentPosition);
-      }
       */
         /*
         Projectile.transform.position = _currentPosition;
