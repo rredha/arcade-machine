@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLength: 3
   bottomBoundary: -3
-  force: 5
+  force: 3
