@@ -10,17 +10,17 @@ namespace Arcade.Project.Runtime.Games.AngryBird
 {
   public class Slingshot : MonoBehaviour
   {
-    private Rubber _rubber;
 
     private PlayerInputActions _playerInputActions;
     private Vector3 _pointerWorldPosition;
     private Vector2 _pointerScreenPosition;
 
     private Camera _camera;
-
-    private Projectile proj;
     private Color _defaultColor;
     private LayerMask _layerMask;
+
+    private Rubber _rubber;
+    private Projectile _projectile;
 
     private void Awake()
     {
@@ -48,12 +48,12 @@ namespace Arcade.Project.Runtime.Games.AngryBird
       var collider = Physics2D.OverlapPoint(_rubber.Holder.position, _layerMask, -Mathf.Infinity, +Mathf.Infinity);
       if (collider != null)
       {
-        proj = collider.GetComponentInChildren<Projectile>();
-        if (proj != null)
+        _projectile = collider.GetComponentInChildren<Projectile>();
+        if (_projectile != null)
         {
           // if not using the release from select action.
           // else in select action performed, drop the projectile in the placeholder.
-          proj.transform.SetParent(_rubber.Holder.transform);
+          _projectile.transform.SetParent(_rubber.Holder.transform);
           _rubber.Set(_pointerWorldPosition);
         }
       }
@@ -62,7 +62,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird
 
     private void Release_performed(InputAction.CallbackContext ctx)
     {
-      if (proj != null)
+      if (_projectile != null)
       {
         Shoot();
       }
@@ -82,8 +82,8 @@ namespace Arcade.Project.Runtime.Games.AngryBird
 
     private void Shoot()
     {
-      proj.SetDynamic();
-      proj.Rb.linearVelocity = (_pointerWorldPosition - _rubber.Center.position) * _rubber.Config.force * -1;
+      _projectile.SetDynamic();
+      _projectile.Rb.linearVelocity = (_pointerWorldPosition - _rubber.Center.position) * _rubber.Config.force * -1;
     }
   }
 }

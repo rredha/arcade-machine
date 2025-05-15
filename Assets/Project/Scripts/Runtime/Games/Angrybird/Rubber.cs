@@ -16,6 +16,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird
     [SerializeField] private Transform rightRubber;
     [SerializeField] private Transform center;
     [SerializeField] private Transform holder;
+    //
     // set to property, with public getter.
     public Transform Holder;
     public Transform Center;
