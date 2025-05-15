@@ -119,6 +119,15 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.InputSystem
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Release"",
+                    ""type"": ""Button"",
+                    ""id"": ""1dc8599d-6fe1-4d2e-b22e-35a9e1459456"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -209,6 +218,17 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.InputSystem
                     ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1ee3ca1e-266d-403a-8123-dfa7582f6ce1"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Release"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -220,6 +240,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.InputSystem
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
             m_Player_Select = m_Player.FindAction("Select", throwIfNotFound: true);
             m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
+            m_Player_Release = m_Player.FindAction("Release", throwIfNotFound: true);
         }
 
         ~@PlayerInputActions()
@@ -303,6 +324,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.InputSystem
         private readonly InputAction m_Player_Move;
         private readonly InputAction m_Player_Select;
         private readonly InputAction m_Player_Aim;
+        private readonly InputAction m_Player_Release;
         /// <summary>
         /// Provides access to input actions defined in input action map "Player".
         /// </summary>
@@ -326,6 +348,10 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.InputSystem
             /// Provides access to the underlying input action "Player/Aim".
             /// </summary>
             public InputAction @Aim => m_Wrapper.m_Player_Aim;
+            /// <summary>
+            /// Provides access to the underlying input action "Player/Release".
+            /// </summary>
+            public InputAction @Release => m_Wrapper.m_Player_Release;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -361,6 +387,9 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.InputSystem
                 @Aim.started += instance.OnAim;
                 @Aim.performed += instance.OnAim;
                 @Aim.canceled += instance.OnAim;
+                @Release.started += instance.OnRelease;
+                @Release.performed += instance.OnRelease;
+                @Release.canceled += instance.OnRelease;
             }
 
             /// <summary>
@@ -381,6 +410,9 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.InputSystem
                 @Aim.started -= instance.OnAim;
                 @Aim.performed -= instance.OnAim;
                 @Aim.canceled -= instance.OnAim;
+                @Release.started -= instance.OnRelease;
+                @Release.performed -= instance.OnRelease;
+                @Release.canceled -= instance.OnRelease;
             }
 
             /// <summary>
@@ -442,6 +474,13 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.InputSystem
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnAim(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Release" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnRelease(InputAction.CallbackContext context);
         }
     }
 }

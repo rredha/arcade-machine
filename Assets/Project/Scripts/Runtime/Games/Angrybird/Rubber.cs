@@ -16,11 +16,17 @@ namespace Arcade.Project.Runtime.Games.AngryBird
     [SerializeField] private Transform rightRubber;
     [SerializeField] private Transform center;
     [SerializeField] private Transform holder;
-    public Transform Holder; // set to property, with public getter.
+    // set to property, with public getter.
+    public Transform Holder;
+    public Transform Center;
+    public SlingshotConfiguration Config;
 
     private void Awake()
     {
       Holder = holder;
+      Center = center;
+      Config = config;
+
       leftLineRenderer = leftRubber.GetComponent<LineRenderer>();
       rightLineRenderer = rightRubber.GetComponent<LineRenderer>();
     }

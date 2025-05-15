@@ -28,7 +28,8 @@ namespace Arcade.Project.Runtime.Games.AngryBird
       _rubber = GetComponent<Rubber>();
       _playerInputActions = new PlayerInputActions();
       _playerInputActions.Player.Enable();
-      _playerInputActions.Player.Aim.performed += Aim_performed;
+      _playerInputActions.Player.Move.performed += Move_performed;
+      _playerInputActions.Player.Release.performed += Release_performed;
 
       _layerMask = LayerMask.GetMask("Selectables");
     }
@@ -59,7 +60,15 @@ namespace Arcade.Project.Runtime.Games.AngryBird
     }
 
 
-    private void Aim_performed(InputAction.CallbackContext ctx)
+    private void Release_performed(InputAction.CallbackContext ctx)
+    {
+      if (proj != null)
+      {
+        Shoot();
+      }
+    }
+
+    private void Move_performed(InputAction.CallbackContext ctx)
     {
       // convert form screen to world position.
       _pointerWorldPosition = ScreenToWorldPosition(ctx.ReadValue<Vector2>());
@@ -71,35 +80,10 @@ namespace Arcade.Project.Runtime.Games.AngryBird
       return new Vector3(worldPosition.x, worldPosition.y, 0);
     }
 
-    /*
     private void Shoot()
     {
-      Projectile.SetDynamic();
-      Projectile.Rb.linearVelocity = (_currentPosition - center.position) * config.force * -1;
+      proj.SetDynamic();
+      proj.Rb.linearVelocity = (_pointerWorldPosition - _rubber.Center.position) * _rubber.Config.force * -1;
     }
-    if (Projectile.gameObject)
-    {
-      Vector3 dir = position - center.position;
-
-      Projectile.gameObject.transform.position.Set
-      (
-        position.x + dir.normalized.x,
-        position.y + dir.normalized.y,
-        0
-      );
-
-      Projectile.transform.right = -dir.normalized;
-    }
-      Projectile.transform.position = _currentPosition;
-      SetRubber(_currentPosition);
-
-    if (Projectile.Col)
-    {
-      Projectile.Col.enabled = true;
-    } else
-    {
-      ResetRubber();
-    }
-  */
   }
 }
