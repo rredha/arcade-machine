@@ -1,29 +1,53 @@
 using UnityEngine;
 using System.Collections;
 using Arcade.Project.Runtime.Games.AngryBird.Interfaces;
+using Arcade.Project.Runtime.Games.AngryBird.Configurations;
 
 namespace Arcade.Project.Runtime.Games.AngryBird.Cues
 {
-  public class ColorChange : MonoBehaviour, IVisualCue
+  public class ColorChange : IVisualHint
   {
-    public void Cue(SpriteRenderer sp)
+    private ColorChangeCueConfiguration _config;
+    private SpriteRenderer _spriteRenderer;
+    private Color _cueColor;
+    private Color _defaultColor;
+
+    private Color _currentColor;
+
+
+    public void OnHintEnabled()
     {
+      _currentColor = _cueColor;
+      ChangeColor(_currentColor);
+    }
+
+    public void OnHintDisabled()
+    {
+      _currentColor = _defaultColor;
+      ResetColor();
+    }
+
+    public void HintToggle()
+    {
+      if (_currentColor == _defaultColor)
+      {
+        _currentColor = _cueColor;
+        ChangeColor(_currentColor);
+      } else
+      {
+        ResetColor();
+      }
 
     }
 
-    public void OnCueActivated(SpriteRenderer sp)
+    private void ResetColor()
     {
-
+        _spriteRenderer.color = _defaultColor;
     }
 
-    public void OnCueDisabled(SpriteRenderer sp)
+    private void ChangeColor(Color color)
     {
-
-    }
-
-    public void OnCueToggle(SpriteRenderer sp)
-    {
-
+        _spriteRenderer.color = color;
     }
   }
 }

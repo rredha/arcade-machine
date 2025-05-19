@@ -1,26 +1,31 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
-using Arcade.Project.Runtime.Games.AngryBird.Cues;
+//using Arcade.Project.Runtime.Games.AngryBird.Cues;
 using Arcade.Project.Runtime.Games.AngryBird.Interfaces;
 using Arcade.Project.Runtime.Games.AngryBird.Utils.InputSystem;
+using Arcade.Project.Runtime.Games.AngryBird.Configurations;
 
 namespace Arcade.Project.Runtime.Games.AngryBird
 {
   public class Pointer : MonoBehaviour
   {
-    [SerializeField] private IVisualCue changeColorOnHover;
-    [SerializeField] private IVisualCue changeColorOnSelection;
+    //private IVisualCue _changeColor;
+    [SerializeField] private ColorChangeCueConfiguration _config;
 
     private Camera _camera;
-    private Collider2D _collider;
-    private SpriteRenderer _spriteRenderer;
-    private Vector3 _pointerWorldPosition;
-    private Vector2 _pointerScreenPosition;
-    private PlayerInputActions _playerInputActions;
-    private Projectile proj;
     private Color _defaultColor;
     private LayerMask _layerMask;
+
+    private Collider2D _collider;
+    private SpriteRenderer _spriteRenderer;
+
+    private Vector3 _pointerWorldPosition;
+    private Vector2 _pointerScreenPosition;
+
+    private PlayerInputActions _playerInputActions;
+
+    private Projectile proj;
 
     private void Awake()
     {
@@ -28,13 +33,16 @@ namespace Arcade.Project.Runtime.Games.AngryBird
       _collider = GetComponent<Collider2D>();
       _collider.isTrigger = true;
       _spriteRenderer = GetComponent<SpriteRenderer>();
-      _defaultColor = _spriteRenderer.color;
       _layerMask = LayerMask.GetMask("Selectables");
+
+      //_changeColor = new ColorChange(_spriteRenderer, _config);
 
       _playerInputActions = new PlayerInputActions();
       _playerInputActions.Player.Enable();
       _playerInputActions.Player.Move.performed += Move_performed;
       _playerInputActions.Player.Select.performed += Select_performed;
+
+
       // dont forget to unsubscribe.
       //_playerInputActions.Player.Select.canceled += Select_canceled;
     }
@@ -50,7 +58,9 @@ namespace Arcade.Project.Runtime.Games.AngryBird
       if (collider == null) return;
       if (collider.TryGetComponent<Projectile>(out proj))
       {
-        ChangeColor(Color.yellow);
+        //ChangeColor(Color.yellow);
+        //
+        //_changeColor.OnCueActivated(_spriteRenderer);
         proj.SetStatic();
         proj.transform.SetParent(this.transform);
       }
@@ -79,14 +89,5 @@ namespace Arcade.Project.Runtime.Games.AngryBird
       return new Vector3(worldPosition.x, worldPosition.y, 5);
     }
 
-    private void ResetColor()
-    {
-        _spriteRenderer.color = _defaultColor;
-    }
-
-    private void ChangeColor(Color color)
-    {
-        _spriteRenderer.color = color;
-    }
   }
 }

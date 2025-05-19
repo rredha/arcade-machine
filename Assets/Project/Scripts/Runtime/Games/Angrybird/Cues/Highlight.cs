@@ -1,3 +1,4 @@
+/*
 using UnityEngine;
 using System.Collections;
 using Arcade.Project.Runtime.Games.AngryBird.Interfaces;
@@ -27,3 +28,4 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Cues
     }
   }
 }
+*/

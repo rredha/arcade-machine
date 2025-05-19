@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using Arcade.Project.Runtime.Games.AngryBird.Cues;
+//using Arcade.Project.Runtime.Games.AngryBird.Cues;
 using Arcade.Project.Runtime.Games.AngryBird.Interfaces;
 
 namespace Arcade.Project.Runtime.Games.AngryBird
@@ -8,8 +8,10 @@ namespace Arcade.Project.Runtime.Games.AngryBird
   // projectile is better suited to be event based.
     public class Projectile : MonoBehaviour
     {
+      /*
         [SerializeField] private IVisualCue highlight;
         [SerializeField] private IVisualCue colorChange;
+      */
 
         public Rigidbody2D Rb {get; private set;}
         public Collider2D Col {get; private set;}
@@ -39,13 +41,13 @@ namespace Arcade.Project.Runtime.Games.AngryBird
         public void SelectActionPerform()
         {
             if (!_isSelected) return;
-            colorChange.OnCueActivated(_spriteRenderer);
+            //colorChange.OnCueActivated(_spriteRenderer);
         }
 
         public void HoverActionPerform()
         {
             if (_isSelected) return;
-            highlight.OnCueActivated(_spriteRenderer);
+           // highlight.OnCueActivated(_spriteRenderer);
         }
 
     }
