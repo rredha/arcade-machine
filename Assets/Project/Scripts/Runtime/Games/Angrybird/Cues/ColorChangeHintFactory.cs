@@ -6,11 +6,11 @@ using Arcade.Project.Runtime.Games.AngryBird.Cues;
 
 namespace Arcade.Project.Runtime.Games.AngryBird.Cues
 {
-  public class ColorChangeHintFactory : MonoBehaviour, IVisualHintFactory
+  public class ColorChangeHintFactory : IVisualHintFactory
   {
     public IVisualHint CreateVisualHint()
     {
-      return new ColorChange();
+      return new ColorChangeWithDelay();
     }
   }
 }

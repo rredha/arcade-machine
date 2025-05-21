@@ -1,7 +1,8 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
-//using Arcade.Project.Runtime.Games.AngryBird.Cues;
+using Arcade.Project.Runtime.Games.AngryBird.Cues;
 using Arcade.Project.Runtime.Games.AngryBird.Interfaces;
 using Arcade.Project.Runtime.Games.AngryBird.Utils.InputSystem;
 using Arcade.Project.Runtime.Games.AngryBird.Configurations;
@@ -11,7 +12,8 @@ namespace Arcade.Project.Runtime.Games.AngryBird
   public class Pointer : MonoBehaviour
   {
     //private IVisualCue _changeColor;
-    [SerializeField] private ColorChangeCueConfiguration _config;
+    //[SerializeField] private ColorChangeCueConfiguration _config;
+    private List<IVisualHint> _colorChangeHints = new List<IVisualHint>();
 
     private Camera _camera;
     private Color _defaultColor;
@@ -35,7 +37,11 @@ namespace Arcade.Project.Runtime.Games.AngryBird
       _spriteRenderer = GetComponent<SpriteRenderer>();
       _layerMask = LayerMask.GetMask("Selectables");
 
-      //_changeColor = new ColorChange(_spriteRenderer, _config);
+      // it work but it need to be implemented using IEnumerator
+      _colorChangeHints.Add(new ColorChangeHintFactory().CreateVisualHint());
+      _colorChangeHints.Add(new ColorChangeWithDelayFactory().CreateVisualHint());
+      _colorChangeHints[0].Initialize(_spriteRenderer, Color.blue);
+      _colorChangeHints[1].Initialize(_spriteRenderer, Color.red);
 
       _playerInputActions = new PlayerInputActions();
       _playerInputActions.Player.Enable();
@@ -60,7 +66,11 @@ namespace Arcade.Project.Runtime.Games.AngryBird
       {
         //ChangeColor(Color.yellow);
         //
-        //_changeColor.OnCueActivated(_spriteRenderer);
+
+        foreach (IVisualHint hint in _colorChangeHints)
+        {
+          hint.OnHintEnabled();
+        }
         proj.SetStatic();
         proj.transform.SetParent(this.transform);
       }

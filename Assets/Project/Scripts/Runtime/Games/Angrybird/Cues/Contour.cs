@@ -6,6 +6,10 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Cues
 {
   public class Contour : IVisualHint
   {
+    public void Initialize(SpriteRenderer sp, Color color)
+    {
+
+    }
     public void OnHintEnabled()
     {
     }
