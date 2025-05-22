@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
-using Arcade.Project.Runtime.Games.AngryBird.Cues;
+using Arcade.Project.Runtime.Games.AngryBird.Hints;
 using Arcade.Project.Runtime.Games.AngryBird.Interfaces;
 using Arcade.Project.Runtime.Games.AngryBird.Utils.InputSystem;
 using Arcade.Project.Runtime.Games.AngryBird.Configurations;

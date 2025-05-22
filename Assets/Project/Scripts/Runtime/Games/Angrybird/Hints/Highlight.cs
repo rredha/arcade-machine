@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 using Arcade.Project.Runtime.Games.AngryBird.Interfaces;
 
-namespace Arcade.Project.Runtime.Games.AngryBird.Cues
+namespace Arcade.Project.Runtime.Games.AngryBird.Hints
 {
   public class Highlight : MonoBehaviour, IVisualCue
   {
