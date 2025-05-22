@@ -1,0 +1,40 @@
+#! /nix/store/9nw8b61s8lfdn8fkabxhbz0s775gjhbr-bash-5.2p37/bin/bash -e
+PATH=${PATH:+':'$PATH':'}
+if [[ $PATH != *':''/nix/store/k97zp1l09g0zrzrd2ww2cykiqg879qcz-which-2.23/bin'':'* ]]; then
+    PATH=$PATH'/nix/store/k97zp1l09g0zrzrd2ww2cykiqg879qcz-which-2.23/bin'
+fi
+PATH=${PATH#':'}
+PATH=${PATH%':'}
+export PATH
+PATH=${PATH:+':'$PATH':'}
+if [[ $PATH != *':''/nix/store/h5rn37dd6vfvr9xb0jq85sq8hf6xchry-coreutils-9.6/bin'':'* ]]; then
+    PATH=$PATH'/nix/store/h5rn37dd6vfvr9xb0jq85sq8hf6xchry-coreutils-9.6/bin'
+fi
+PATH=${PATH#':'}
+PATH=${PATH%':'}
+export PATH
+dotnetFromEnv() {
+    local dotnetPath
+    if command -v dotnet 2>&1 >/dev/null; then
+        dotnetPath=$(which dotnet) && \
+            dotnetPath=$(realpath "$dotnetPath") && \
+            dotnetPath=$(dirname "$dotnetPath") && \
+            export DOTNET_ROOT="$dotnetPath"
+    fi
+}
+dotnetFromEnv
+export DOTNET_ROOT=${DOTNET_ROOT-'/nix/store/57x15z3f8vhdp2glyxkysrqvvnc773bz-dotnet-sdk-wrapped-9.0.203/share/dotnet'}
+PATH=${PATH:+':'$PATH':'}
+if [[ $PATH != *':''/nix/store/57x15z3f8vhdp2glyxkysrqvvnc773bz-dotnet-sdk-wrapped-9.0.203/bin'':'* ]]; then
+    PATH=$PATH'/nix/store/57x15z3f8vhdp2glyxkysrqvvnc773bz-dotnet-sdk-wrapped-9.0.203/bin'
+fi
+PATH=${PATH#':'}
+PATH=${PATH%':'}
+export PATH
+LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+':'$LD_LIBRARY_PATH':'}
+LD_LIBRARY_PATH=${LD_LIBRARY_PATH/':''/nix/store/6pr4vfwd4s376sfa784d2ad0b82gdd2d-icu4c-76.1/lib'':'/':'}
+LD_LIBRARY_PATH='/nix/store/6pr4vfwd4s376sfa784d2ad0b82gdd2d-icu4c-76.1/lib'$LD_LIBRARY_PATH
+LD_LIBRARY_PATH=${LD_LIBRARY_PATH#':'}
+LD_LIBRARY_PATH=${LD_LIBRARY_PATH%':'}
+export LD_LIBRARY_PATH
+exec "/nix/store/ss85bizn4f779wydx315nb6ajdh8nkp6-roslyn-ls-4.14.0-3.25164.3/lib/roslyn-ls/Microsoft.CodeAnalysis.LanguageServer"  "$@" 

@@ -1,0 +1,332 @@
+{
+    "name": "Move",
+    "maps": [
+        {
+            "name": "Movement",
+            "id": "b91de264-ff29-4bc7-9ea2-b2e79b797b77",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "PassThrough",
+                    "id": "621484f1-9db0-42fc-b5b3-0c168e24a062",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "2D Vector",
+                    "id": "9ba03ccb-1296-41c7-8b28-67e54a0849d9",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "e44a4c94-bf96-4a31-ae28-587ba69f6b04",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "1b8f4c68-cdee-4fc0-a1e2-4f61f0985e79",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "286c6138-a804-4dda-86cf-a48586cabbfc",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "0f1be31e-bbdf-4b83-aa04-75e9082dc302",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "28b47cb3-1dcb-4a5a-b128-c3125901a74d",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "5f2bd347-d0ee-4062-bbd5-579b85c875ca",
+                    "path": "<Mouse>/delta/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Mouse",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "f348fe55-0d62-4018-8d8b-6fdd118aa1cc",
+                    "path": "<Mouse>/delta/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "2f38f9bc-d577-433c-942e-787a04ac6e64",
+                    "path": "<Mouse>/delta/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "ea194f19-cc03-41d0-8473-fb676a1b9d18",
+                    "path": "<Mouse>/delta/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Mouse",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "df78a56b-ad97-485d-a604-a9cae2a7b5c3",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "1932efb6-45b2-4fbb-abe9-069b1ca67015",
+                    "path": "<Wiimote>/accelerometer/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Wiimote",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "0e27a058-597b-42ef-8ae5-5d01cf4a2b6e",
+                    "path": "<Wiimote>/accelerometer/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Wiimote",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "302bad39-7a5e-4a18-a365-5853e9afc2c3",
+                    "path": "<Wiimote>/accelerometer/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Wiimote",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "1ce34fc3-ee03-42bb-8cef-c47d7a1db79a",
+                    "path": "<Wiimote>/accelerometer/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Wiimote",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "eac74bc7-ad1c-4d1a-bbb7-6d19b2878cfd",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "b5656d52-1644-4c9d-933c-7d4d54d44916",
+                    "path": "<Wiimote>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "334384e2-fb85-4c02-90ea-7953ea3e6937",
+                    "path": "<Wiimote>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "0cca187f-0d68-4e48-815e-d6a5f3065ee4",
+                    "path": "<Wiimote>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "203528cd-294d-404f-bf91-49b99bffd94a",
+                    "path": "<Wiimote>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Wiimote",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "74938d1e-244d-4257-9684-1054f48205e8",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "92a0093c-4f18-4b8a-91a5-bca2384fa601",
+                    "path": "<Wiimote>/nunchuckStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Wiimote",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "75711669-5dac-4e07-8ff0-32be85ad3a04",
+                    "path": "<Wiimote>/nunchuckStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Wiimote",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "a259713a-096e-4619-b88d-f39e834608fe",
+                    "path": "<Wiimote>/nunchuckStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Wiimote",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "f1709b28-656c-4ea1-b391-c2e07ff7ffb2",
+                    "path": "<Wiimote>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Wiimote",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Mouse",
+            "bindingGroup": "Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Wiimote",
+            "bindingGroup": "Wiimote",
+            "devices": [
+                {
+                    "devicePath": "<Wiimote>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

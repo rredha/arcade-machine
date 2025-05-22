@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a0936d25894cc5953f997626ca4821, type: 3}
+  m_Name: Hit
+  m_EditorClassIdentifier: 
+  clipName: Hit
+  soundTracks: {fileID: 8300000, guid: 91559ff30b6aa4e3d924940ecde62498, type: 3}
+  loop: 0
+  volume: 1

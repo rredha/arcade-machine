@@ -6,24 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Project/Scenes/Menu.unity
+    path: Assets/Project/Scenes/Menu.unity
     guid: 20548e951ffa9454082e62eda671a3c7
   - enabled: 1
-    path: Assets/_Project/Scenes/BreakOut/BreakOutGlobal.unity
+    path: Assets/Project/Scenes/BreakOut/BreakOutGlobal.unity
     guid: 2af7ffb7af750d3479eb003739776e8f
   - enabled: 1
-    path: Assets/_Project/Scenes/BreakOut/BreakOutLevel1.unity
+    path: Assets/Project/Scenes/BreakOut/BreakOutLevel1.unity
     guid: 2a256623919aee743a257a83e2b51677
   - enabled: 1
-    path: Assets/_Project/Scenes/BreakOut/BreakOutLevel2.unity
+    path: Assets/Project/Scenes/BreakOut/BreakOutLevel2.unity
     guid: d0780aec11f4c244cb8ab89e71c83899
   - enabled: 1
-    path: Assets/_Project/Scenes/BreakOut/BreakOutLevel3.unity
+    path: Assets/Project/Scenes/BreakOut/BreakOutLevel3.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/_Project/Scenes/Pong/Pong.unity
+    path: Assets/Project/Scenes/Pong/Pong.unity
     guid: 8d2a97a40f4518b46acee815f193727a
   - enabled: 1
-    path: Assets/_Project/Scenes/Snake/Snake.unity
+    path: Assets/Project/Scenes/Snake/Snake.unity
     guid: 6a08dfb11efc3964981ee220b33c8b51
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 67df20868e41af2d3ab5f1f5e56f0828, type: 3}
+  m_UseUCBPForAssetBundles: 0

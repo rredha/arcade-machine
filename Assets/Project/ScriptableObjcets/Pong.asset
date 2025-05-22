@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f570e294fbc3e4c9af1ee4e1290788, type: 3}
+  m_Name: Pong
+  m_EditorClassIdentifier: 
+  gameName: Pong
+  soundTrackConfigArray:
+  - {fileID: 11400000, guid: b993768675ef2f8e5860c93645c4b404, type: 2}
+  - {fileID: 11400000, guid: cad1ed0506ad24959b169218221e23de, type: 2}
+  - {fileID: 11400000, guid: f770690df97efe2b588a13ca2e431b11, type: 2}

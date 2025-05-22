@@ -1,0 +1,17 @@
+{
+    "name": "Project.Runtime.Core.ScoreTracker",
+    "rootNamespace": "",
+    "references": [
+        "GUID:9005c5b3aae32557f9a5f83e974c47dd",
+        ""
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
