@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Arcade._Project.Core.StateMachine
+namespace Arcade.Project.Core.StateMachine
 {
-    public abstract class StateMachine<TEnumState> : MonoBehaviour where TEnumState : Enum
+    public abstract class StateManager<TEnumState> : MonoBehaviour where TEnumState : Enum
     {
         /* State Machine is responsible for setting the other states.
          * States are stored in {key,value} pair
@@ -40,6 +40,7 @@ namespace Arcade._Project.Core.StateMachine
             IsTransitionState = false;
         }
 
+        /*
         private void OnTriggerEnter(Collider other)
         {
             CurrentState.OnTriggerEnter(other);
@@ -54,5 +55,6 @@ namespace Arcade._Project.Core.StateMachine
         {
             CurrentState.OnTriggerExit(other);
         }
+        */
     }
 }

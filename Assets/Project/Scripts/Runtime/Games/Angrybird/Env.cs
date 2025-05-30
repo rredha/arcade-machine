@@ -3,10 +3,14 @@ using System.Collections;
 
 namespace Arcade.Project.Runtime.Games.AngryBird
 {
-  public class Environment : MonoBehaviour
+  public class Env : MonoBehaviour
   {
     [SerializeField] private Rigidbody2D _envRigidBody;
     private bool hasMoved;
+    public bool DidItReallyMove()
+    {
+      return _envRigidBody.linearVelocity.magnitude != 0f;
+    }
 
     public bool HasMoved
     {
