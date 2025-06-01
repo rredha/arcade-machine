@@ -7,14 +7,15 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.GameState
 {
   public class FinishState : GameState
   {
+    private GameContext _context;
     public FinishState(GameContext context, GameStateMachine.EGameState key) : base(context, key)
     {
-        GameContext Context = context;
+        GameContext _context = context;
     }
 
     public override void EnterState()
     {
-
+      Debug.Log("Hello from finish state");
     }
 
     public override void ExitState()
@@ -29,15 +30,8 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.GameState
 
     public override GameStateMachine.EGameState GetNextState()
     {
-      return StateKey;
+      return GameStateMachine.EGameState.Finish;
     }
 
-    public void CheckIfEnvironmentMoved()
-    {
-      for (int i = 0; i < _environmentList.Count; i++)
-      {
-        has_env_moved[i] = _environmentList[i].DidItReallyMove();
-      }
-    }
   }
 }

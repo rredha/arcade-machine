@@ -4,55 +4,40 @@ using Arcade.Project.Runtime.Games.AngryBird.Interfaces;
 
 namespace Arcade.Project.Runtime.Games.AngryBird
 {
-  public class Spawner : MonoBehaviour, ISpawnableItem
+  public class Spawner : MonoBehaviour
   {
-    [SerializeField] private Projectile Projectile;
+    public Projectile Projectile;
+    public Birds Bird;
 
-    public IEnumerator Spawn(Transform location)
+    public Transform ProjectileLocation;
+    public Transform BirdLocation;
+
+    public GameObject SpawnedProjectile;
+
+    public void CoroutineStartBird()
+    {
+      StartCoroutine(SpawnBird(BirdLocation));
+    }
+
+    public void CoroutineStartProjectile()
+    {
+      StartCoroutine(SpawnProjectile(ProjectileLocation));
+    }
+
+    public IEnumerator SpawnProjectile(Transform location)
     {
 
-      Instantiate(Projectile.gameObject,
+      SpawnedProjectile = Instantiate(Projectile.gameObject,
                   location.position ,Quaternion.identity);
-
       yield return null;
     }
 
-    public IEnumerator Spawn(Transform location, Transform parent)
+    public IEnumerator SpawnBird(Transform location)
     {
 
-      Instantiate(Projectile.gameObject,
-                  location.position ,Quaternion.identity,
-                  parent);
+      Instantiate(Bird.gameObject,
+                  location.position ,Quaternion.identity);
       yield return null;
-    }
-
-    public IEnumerator Spawn(Transform location, Transform parent, bool isStatic)
-    {
-
-      Instantiate(Projectile.gameObject,
-                  location.position ,Quaternion.identity,
-                  parent);
-      if (isStatic) Projectile.SetStatic();
-      yield return null;
-    }
-
-    public IEnumerator Spawn(Transform location, Transform parent, bool isStatic, float delay)
-    {
-
-      yield return new WaitForSeconds(delay);
-      Instantiate(Projectile.gameObject,
-                  location.position ,Quaternion.identity,
-                  parent);
-      if (isStatic) Projectile.SetStatic();
-    }
-
-    public IEnumerator Spawn(Transform location, Transform parent, float delay)
-    {
-
-      yield return new WaitForSeconds(delay);
-      Instantiate(Projectile.gameObject,
-                  location.position ,Quaternion.identity,
-                  parent);
     }
   }
 }

@@ -523,7 +523,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 182507180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc91a49a0c1b4ffb38cbb42936688456, type: 3}
+  m_Script: {fileID: 11500000, guid: d57841985b539e0c0adcddcf6589def5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _envRigidBody: {fileID: 1689315734}
@@ -664,6 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e6a97604ae4a91b9cebc007b8246bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  proj: {fileID: 0}
 --- !u!1 &275046628
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +869,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 284715054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc91a49a0c1b4ffb38cbb42936688456, type: 3}
+  m_Script: {fileID: 11500000, guid: d57841985b539e0c0adcddcf6589def5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _envRigidBody: {fileID: 997383197}
@@ -1371,6 +1372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 539527643}
   - component: {fileID: 539527644}
+  - component: {fileID: 539527645}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1407,10 +1409,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3091dfa45894828fbb0abe33d117207f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spawner: {fileID: 679116444}
+--- !u!114 &539527645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539527641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a50d1f74de416ed59cd3d13f1ca4e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawner: {fileID: 679116444}
+  _pointer: {fileID: 240641260}
+  _projectile: {fileID: 1540234852016653049, guid: d1c2625f194f752818182b45cbddef35, type: 3}
   _bird: {fileID: 6490768454047996905, guid: 6027c21f42f0d3f94a10d34379a361bd, type: 3}
+  _projectileSpawnPosition: {fileID: 1811275438}
   _birdSpawnPosition: {fileID: 1987644548}
-  CenterOfTheScreen: {fileID: 1811275438}
   _environmentList:
   - {fileID: 182507182}
   - {fileID: 842311464}
@@ -1631,6 +1647,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Projectile: {fileID: 1540234852016653049, guid: d1c2625f194f752818182b45cbddef35, type: 3}
+  Bird: {fileID: 6490768454047996905, guid: 6027c21f42f0d3f94a10d34379a361bd, type: 3}
+  ProjectileLocation: {fileID: 1811275438}
+  BirdLocation: {fileID: 1987644548}
 --- !u!1 &685199099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1812,7 +1831,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 842311462}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc91a49a0c1b4ffb38cbb42936688456, type: 3}
+  m_Script: {fileID: 11500000, guid: d57841985b539e0c0adcddcf6589def5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _envRigidBody: {fileID: 275046631}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Arcade.Project.Core.StateMachine
 {
-    public abstract class State<TEnumState> : MonoBehaviour where TEnumState : Enum
+    public abstract class State<TEnumState> where TEnumState : Enum
     {
         public State(TEnumState key)
         {
@@ -17,6 +17,7 @@ namespace Arcade.Project.Core.StateMachine
         public abstract void ExitState();
         public abstract void UpdateState();
         public abstract TEnumState GetNextState();
+
         /*
         public abstract void OnTriggerEnter(Collider other);
         public abstract void OnTriggerStay(Collider other);

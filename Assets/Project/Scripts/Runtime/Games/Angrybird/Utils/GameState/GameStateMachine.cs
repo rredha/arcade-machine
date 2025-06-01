@@ -15,13 +15,38 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.GameState
       Finish,
     }
 
-    //private List<Environment> _environmentList = new List<Environment>();
+    private GameContext _gameContext;
 
-    private GameContext _context;
+    [SerializeField] private Spawner _spawner;
+    [SerializeField] private Pointer _pointer;
+
+    [SerializeField] private Projectile _projectile;
+    [SerializeField] private Birds _bird;
+
+    [SerializeField] private Transform _projectileSpawnPosition;
+    [SerializeField] private Transform _birdSpawnPosition;
+
+    [SerializeField] private List<Env> _environmentList = new List<Env>();
 
     private void Awake()
     {
-     // _context = new GameContext(_environmentList);
+      _gameContext = new GameContext
+       (
+         _spawner,
+         _pointer,
+         _projectile, _bird,
+         _projectileSpawnPosition, _birdSpawnPosition,
+         _environmentList
+       );
+      CreateStateMachine();
     }
+    private void CreateStateMachine()
+    {
+      States.Add(GameStateMachine.EGameState.Init, new InitState(_gameContext, GameStateMachine.EGameState.Init));
+      States.Add(GameStateMachine.EGameState.Play, new PlayState(_gameContext, GameStateMachine.EGameState.Play));
+      States.Add(GameStateMachine.EGameState.Finish, new FinishState(_gameContext, GameStateMachine.EGameState.Finish));
+      CurrentState = States[GameStateMachine.EGameState.Init];
+    }
+
   }
 }

@@ -8,26 +8,26 @@ namespace Arcade.Project.Runtime.Games.AngryBird
   // projectile is better suited to be event based.
     public class Projectile : MonoBehaviour
     {
-      /*
-        [SerializeField] private IVisualCue highlight;
-        [SerializeField] private IVisualCue colorChange;
-      */
-
       private LayerMask _environmentLayer;
+      private LayerMask _groundLayer;
       public Rigidbody2D Rb {get; private set;}
       public Collider2D Col {get; private set;}
       private SpriteRenderer _spriteRenderer;
-      private bool _isSelected;
+      public bool IsSelected {get; private set;}
+      public bool IsMoving {get; private set;}
+      public bool IsInContactWithGround {get; private set;}
 
       private void Awake()
       {
         _environmentLayer = LayerMask.GetMask("Environment");
+        _groundLayer = LayerMask.GetMask("Ground");
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+
         Rb = GetComponent<Rigidbody2D>();
         Col = GetComponent<Collider2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _isSelected = false;
-      }
 
+        IsSelected = false;
+      }
 
       public void SetStatic()
       {
@@ -41,32 +41,40 @@ namespace Arcade.Project.Runtime.Games.AngryBird
         Rb.bodyType = RigidbodyType2D.Dynamic;
       }
 
-      public void SelectActionPerform()
+      public void SetProjectileSelected()
       {
-        if (!_isSelected) return;
-        //colorChange.OnCueActivated(_spriteRenderer);
+        IsSelected = true;
       }
 
-      public void HoverActionPerform()
-      {
-        if (_isSelected) return;
-       // highlight.OnCueActivated(_spriteRenderer);
-      }
+      // TO FIX
+      // Minor bug regarding linear velocity.
 
-      private void OnCollisionEnter2D(Collision2D col)
+      public bool GetProjectileIsMoving()
       {
-        // simply disable collider so it wont get activated when checking for bird free.
-        // simplest implementation is to check when the projectile no longer moves.
-        // also check if an environment has been moved to disable it.
-        Debug.Log(col.gameObject.layer + _environmentLayer.ToString());
-        if (col.gameObject.layer == _environmentLayer)
+        const float THRESHHOLD = 0.5f;
+        if (Rb.linearVelocity.magnitude <= THRESHHOLD)
         {
-          Collider2D collisionCollider;
-          collisionCollider = col.gameObject.GetComponent<Collider2D>();
-          Debug.Log(col.gameObject.name);
-          collisionCollider.enabled = false;
+          return false;
+          //IsMoving = false;
+        } else
+        {
+          return true;
+          //IsMoving = true;
         }
       }
 
+      public bool GetProjectileInContactWithGround()
+      {
+        if (Col.IsTouchingLayers(_groundLayer))
+        {
+          //IsInContactWithGround = true;
+          return true;
+        }else
+        {
+          return false;
+          //IsInContactWithGround = false;
+        }
+
+      }
     }
 }

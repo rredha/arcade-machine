@@ -11,8 +11,11 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.GameState
         GameContext Context = context;
     }
 
+    private GameStateMachine.EGameState _nextState;
+
     public override void EnterState()
     {
+      Debug.Log("Hello from playing state");
 
     }
 
@@ -23,12 +26,21 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.GameState
 
     public override void UpdateState()
     {
-
     }
 
     public override GameStateMachine.EGameState GetNextState()
     {
-      return StateKey;
+      bool isProjectileMoving = Context.Spawner.SpawnedProjectile.GetComponent<Projectile>().GetProjectileIsMoving();
+      bool isProjectileInContactWithGround = Context.Spawner.SpawnedProjectile.GetComponent<Projectile>().GetProjectileInContactWithGround();
+      if (!isProjectileMoving & isProjectileInContactWithGround)
+      {
+        _nextState = GameStateMachine.EGameState.Finish;
+      } else
+      {
+        _nextState = GameStateMachine.EGameState.Play;
+      }
+
+      return _nextState;
     }
   }
 }

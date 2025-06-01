@@ -9,7 +9,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird
     public Rigidbody2D Rb {get; private set;}
     public Collider2D Col {get; private set;}
     private SpriteRenderer _spriteRenderer;
-    private bool _isFree;
+    //private bool _isFree;
 
     private void Awake()
     {
@@ -17,19 +17,22 @@ namespace Arcade.Project.Runtime.Games.AngryBird
       Col = GetComponent<Collider2D>();
       _spriteRenderer = GetComponent<SpriteRenderer>();
 
-      SetCaptive();
+      //SetCaptive();
     }
 
 
     private void FixedUpdate()
     {
+      /*
       if (true)
       {
         SetFree();
       }
       SetCaptive();
+      */
     }
 
+    /*
     private void SetFree()
     {
       _isFree = true;
@@ -39,5 +42,6 @@ namespace Arcade.Project.Runtime.Games.AngryBird
     {
       _isFree = false;
     }
+    */
   }
 }

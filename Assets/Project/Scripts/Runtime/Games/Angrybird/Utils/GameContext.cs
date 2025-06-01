@@ -5,27 +5,48 @@ using Arcade.Project.Runtime.Games.AngryBird;
 
 namespace Arcade.Project.Runtime.Games.AngryBird.Utils
 {
-  public class GameContext : MonoBehaviour
+  public class GameContext
   {
-    private List<Env> _environmentList = new List<Env>();
     private Spawner _spawner;
-    private Birds _bird;
-    private Transform _birdSpawnPosition;
-    private Transform _centerOfTheScreen;
+    private Pointer _pointer;
 
-    GameContext(List<Env> environmentList, Spawner spawner, Birds bird, Transform birdSpawnPosition, Transform centerOfTheScreen)
-    {
-     _environmentList = environmentList;
-     _spawner = spawner;
-     _bird = bird;
-     _birdSpawnPosition = birdSpawnPosition;
-     _centerOfTheScreen = centerOfTheScreen;
-    }
+    private Projectile _projectile;
+    private Birds _bird;
+
+    private Transform _projectileSpawnPosition;
+    private Transform _birdSpawnPosition;
+
+    private List<Env> _environmentList = new List<Env>();
+
+    public GameContext
+      (
+       Spawner spawner,
+       Pointer pointer,
+       Projectile projectile, Birds bird,
+       Transform projectileSpawnPosition, Transform birdSpawnPosition,
+       List<Env> environmentList
+      )
+      {
+       _spawner = spawner;
+       _pointer = pointer;
+
+       _projectile = projectile;
+       _bird = bird;
+
+       _projectileSpawnPosition = projectileSpawnPosition;
+       _birdSpawnPosition = birdSpawnPosition;
+
+       _environmentList = environmentList;
+      }
+
+    public Spawner Spawner => _spawner;
+    public Pointer Pointer => _pointer;
+    public Projectile Projectile => _projectile;
+    public Birds Bird => _bird;
+
+    public Transform ProjectileSpawnPosition => _projectileSpawnPosition;
+    public Transform BirdSpawnPosition => _birdSpawnPosition;
 
     public List<Env> EnvironmentList => _environmentList;
-    public Spawner Spawner => _spawner;
-    public Birds Bird => _bird;
-    public Transform BirdSpawnPosition => _birdSpawnPosition;
-    public Transform CenterOfTheScreen => _centerOfTheScreen;
   }
 }

@@ -13,50 +13,35 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.GameState
     {
         GameContext Context = context;
     }
+    private GameStateMachine.EGameState _nextState;
 
     public override void EnterState()
     {
+      Context.Spawner.BirdLocation = Context.BirdSpawnPosition;
+      Context.Spawner.ProjectileLocation = Context.ProjectileSpawnPosition;
 
-    }
-
-    public override void ExitState()
-    {
-
+      Context.Spawner.CoroutineStartBird();
+      Context.Spawner.CoroutineStartProjectile();
     }
 
     public override void UpdateState()
     {
+    }
 
+    public override void ExitState()
+    {
     }
 
     public override GameStateMachine.EGameState GetNextState()
     {
-      return StateKey;
-    }
+      bool isProjectileSelected = Context.Spawner.SpawnedProjectile.GetComponent<Projectile>().IsSelected;
 
-    public void SpawnWorldInteractbles()
-    {
-      SpawnProjectile();
-      SpawnBird();
-    }
+      if (isProjectileSelected)
+      {
+        _nextState = GameStateMachine.EGameState.Play;
+      }
 
-    public void SpawnProjectile()
-    {
-      StartCoroutine(Spawner.Spawn(CenterOfTheScreen));
-    }
-
-    public void SpawnBird()
-    {
-      StartCoroutine(SpawnBirdAt(_birdSpawnPosition));
-    }
-
-    public IEnumerator SpawnBirdAt(Transform location)
-    {
-
-      Instantiate(_bird.gameObject,
-                  _birdSpawnPosition.position ,Quaternion.identity);
-
-      yield return null;
+      return _nextState;
     }
   }
 }

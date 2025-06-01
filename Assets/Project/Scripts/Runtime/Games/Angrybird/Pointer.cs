@@ -27,7 +27,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird
 
     private PlayerInputActions _playerInputActions;
 
-    private Projectile proj;
+    public Projectile proj;
 
     private void Awake()
     {
@@ -47,6 +47,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird
       _playerInputActions.Player.Enable();
       _playerInputActions.Player.Move.performed += Move_performed;
       _playerInputActions.Player.Select.performed += Select_performed;
+
 
 
       // dont forget to unsubscribe.
@@ -73,6 +74,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird
         }
         proj.SetStatic();
         proj.transform.SetParent(this.transform);
+        proj.SetProjectileSelected();
       }
     }
 
