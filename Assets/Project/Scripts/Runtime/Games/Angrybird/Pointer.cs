@@ -11,8 +11,6 @@ namespace Arcade.Project.Runtime.Games.AngryBird
 {
   public class Pointer : MonoBehaviour
   {
-    //private IVisualCue _changeColor;
-    //[SerializeField] private ColorChangeCueConfiguration _config;
     private List<IVisualHint> _colorChangeHints = new List<IVisualHint>();
 
     private Camera _camera;
@@ -65,9 +63,6 @@ namespace Arcade.Project.Runtime.Games.AngryBird
       if (collider == null) return;
       if (collider.TryGetComponent<Projectile>(out proj))
       {
-        //ChangeColor(Color.yellow);
-        //
-
         foreach (IVisualHint hint in _colorChangeHints)
         {
           hint.OnHintEnabled();

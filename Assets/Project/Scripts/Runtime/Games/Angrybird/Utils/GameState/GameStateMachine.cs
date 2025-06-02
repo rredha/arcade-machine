@@ -15,6 +15,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.GameState
       Finish,
     }
 
+
     private GameContext _gameContext;
 
     [SerializeField] private Spawner _spawner;
@@ -46,6 +47,10 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.GameState
       States.Add(GameStateMachine.EGameState.Play, new PlayState(_gameContext, GameStateMachine.EGameState.Play));
       States.Add(GameStateMachine.EGameState.Finish, new FinishState(_gameContext, GameStateMachine.EGameState.Finish));
       CurrentState = States[GameStateMachine.EGameState.Init];
+    }
+
+    private void Update()
+    {
     }
 
   }

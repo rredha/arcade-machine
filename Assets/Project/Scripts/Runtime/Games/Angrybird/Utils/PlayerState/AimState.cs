@@ -3,18 +3,20 @@ using System.Collections;
 using UnityEngine;
 using Arcade.Project.Core.StateMachine;
 using Arcade.Project.Runtime.Games.AngryBird.Utils;
+using Arcade.Project.Runtime.Games.AngryBird.Utils.GameState;
 
 namespace Arcade.Project.Runtime.Games.AngryBird.Utils.PlayerState
 {
   public class AimState : PlayerState
   {
-    public AimState(GameContext context, PlayerStateMachine.EPlayerState key) : base(context, key)
+    public AimState(PlayerContext context, PlayerStateMachine.EPlayerState key) : base(context, key)
     {
-        GameContext Context = context;
+        PlayerContext Context = context;
     }
 
     public override void EnterState()
     {
+      Debug.Log("Aim then release to free captive bird.");
 
     }
 
@@ -30,7 +32,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.PlayerState
 
     public override PlayerStateMachine.EPlayerState GetNextState()
     {
-      return StateKey;
+      return PlayerStateMachine.EPlayerState.Aim;
     }
   }
 }

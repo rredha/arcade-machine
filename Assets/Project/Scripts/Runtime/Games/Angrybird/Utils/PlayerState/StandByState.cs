@@ -1,19 +1,21 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using Arcade.Project.Core.StateMachine;
 using Arcade.Project.Runtime.Games.AngryBird.Utils;
+using Arcade.Project.Runtime.Games.AngryBird.Utils.GameState;
 
 namespace Arcade.Project.Runtime.Games.AngryBird.Utils.PlayerState
 {
-  public class PickState : PlayerState
+  public class StandByState : PlayerState
   {
-    public PickState(PlayerContext context, PlayerStateMachine.EPlayerState key) : base(context, key)
+    public StandByState(PlayerContext context, PlayerStateMachine.EPlayerState key) : base(context, key)
     {
         PlayerContext Context = context;
     }
 
     public override void EnterState()
     {
-      Debug.Log("Please pick the ball");
 
     }
 
@@ -29,7 +31,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.PlayerState
 
     public override PlayerStateMachine.EPlayerState GetNextState()
     {
-      return PlayerStateMachine.EPlayerState.Drop;
+      return PlayerStateMachine.EPlayerState.StandBy;
     }
   }
 }

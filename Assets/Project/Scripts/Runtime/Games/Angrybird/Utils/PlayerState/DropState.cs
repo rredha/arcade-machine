@@ -5,15 +5,16 @@ using Arcade.Project.Runtime.Games.AngryBird.Utils;
 
 namespace Arcade.Project.Runtime.Games.AngryBird.Utils.PlayerState
 {
-  public class ReleaseState : PlayerState
+  public class DropState : PlayerState
   {
-    public ReleaseState(GameContext context, PlayerStateMachine.EPlayerState key) : base(context, key)
+    public DropState(PlayerContext context, PlayerStateMachine.EPlayerState key) : base(context, key)
     {
-        GameContext Context = context;
+        PlayerContext Context = context;
     }
 
     public override void EnterState()
     {
+      Debug.Log("Drop the projectile in the Slingshot");
 
     }
 
@@ -29,7 +30,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.PlayerState
 
     public override PlayerStateMachine.EPlayerState GetNextState()
     {
-      return StateKey;
+      return PlayerStateMachine.EPlayerState.Aim;
     }
   }
 }

@@ -8,9 +8,9 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.PlayerState
 {
   public abstract class PlayerState : State<PlayerStateMachine.EPlayerState>
   {
-    protected GameContext Context;
+    protected PlayerContext Context;
 
-    public PlayerState(GameContext context, PlayerStateMachine.EPlayerState statekey) : base(statekey)
+    public PlayerState(PlayerContext context, PlayerStateMachine.EPlayerState statekey) : base(statekey)
     {
       Context = context;
     }
