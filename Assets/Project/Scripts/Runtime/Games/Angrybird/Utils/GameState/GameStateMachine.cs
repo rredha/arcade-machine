@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Arcade.Project.Core.StateMachine;
 using Arcade.Project.Runtime.Games.AngryBird.Utils;
+using Arcade.Project.Runtime.Games.AngryBird.Utils.PlayerState;
 
 namespace Arcade.Project.Runtime.Games.AngryBird.Utils.GameState
 {
@@ -28,6 +29,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.GameState
     [SerializeField] private Transform _birdSpawnPosition;
 
     [SerializeField] private List<Env> _environmentList = new List<Env>();
+    [SerializeField] private PlayerStateMachine _playerStateMachine;
 
     private void Awake()
     {
@@ -37,7 +39,8 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.GameState
          _pointer,
          _projectile, _bird,
          _projectileSpawnPosition, _birdSpawnPosition,
-         _environmentList
+         _environmentList,
+         _playerStateMachine
        );
       CreateStateMachine();
     }

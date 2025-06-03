@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Arcade.Project.Runtime.Games.AngryBird;
+using Arcade.Project.Runtime.Games.AngryBird.Utils.PlayerState;
 
 namespace Arcade.Project.Runtime.Games.AngryBird.Utils
 {
@@ -17,6 +18,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils
     private Transform _birdSpawnPosition;
 
     private List<Env> _environmentList = new List<Env>();
+    private PlayerStateMachine _playerStateMachine;
 
     public GameContext
       (
@@ -24,7 +26,8 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils
        Pointer pointer,
        Projectile projectile, Birds bird,
        Transform projectileSpawnPosition, Transform birdSpawnPosition,
-       List<Env> environmentList
+       List<Env> environmentList,
+       PlayerStateMachine playerStateMachine
       )
       {
        _spawner = spawner;
@@ -37,6 +40,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils
        _birdSpawnPosition = birdSpawnPosition;
 
        _environmentList = environmentList;
+       _playerStateMachine = playerStateMachine;
       }
 
     public Spawner Spawner => _spawner;
@@ -48,5 +52,6 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils
     public Transform BirdSpawnPosition => _birdSpawnPosition;
 
     public List<Env> EnvironmentList => _environmentList;
+    public PlayerStateMachine playerStateMachine => _playerStateMachine;
   }
 }

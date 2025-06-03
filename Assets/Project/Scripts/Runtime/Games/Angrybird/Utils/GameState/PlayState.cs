@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Arcade.Project.Runtime.Games.AngryBird.Utils;
+using Arcade.Project.Runtime.Games.AngryBird.Utils.PlayerState;
 
 namespace Arcade.Project.Runtime.Games.AngryBird.Utils.GameState
 {
@@ -15,7 +16,7 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.GameState
 
     public override void EnterState()
     {
-      Debug.Log("Hello from playing state");
+      //Context.PlayerStateMachine.SayHello();
 
     }
 

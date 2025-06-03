@@ -21,7 +21,6 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.PlayerState
 
     [SerializeField] private Pointer _pointer;
     [SerializeField] private Projectile _projectile;
-    private GameStateMachine _gameStateMachine;
 
     private void Awake()
     {
@@ -31,7 +30,6 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.PlayerState
          _projectile
        );
       CreatePlayerStateMachine();
-      RunPlayerStateMachine();
     }
 
     private void CreatePlayerStateMachine()
@@ -45,6 +43,11 @@ namespace Arcade.Project.Runtime.Games.AngryBird.Utils.PlayerState
     public void RunPlayerStateMachine()
     {
       CurrentState = States[PlayerStateMachine.EPlayerState.StandBy];
+    }
+
+    public void SayHello()
+    {
+      Debug.Log("Hello");
     }
   }
 }
